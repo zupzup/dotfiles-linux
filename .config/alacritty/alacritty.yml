@@ -547,8 +547,8 @@ key_bindings:
   - { key: D,        mods: Control, chars: "\x02\x64"                    }
   - { key: K,        mods: Control, action: ClearHistory                 }
   - { key: K,        mods: Control, chars: "\x0c"                        }
-  - { key: LBracket, mods: Command, chars: "\x02\x70"              }
-  - { key: RBracket, mods: Command, chars: "\x02\x6e"              }
+  - { key: LBracket, mods: Alt, chars: "\x02\x70"              }
+  - { key: RBracket, mods: Alt, chars: "\x02\x6e"              }
 
   # (Windows only)
   #- { key: Return,   mods: Alt,           action: ToggleFullscreen }
