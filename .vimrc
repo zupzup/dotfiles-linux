@@ -24,7 +24,7 @@ Plugin 'maralla/completor.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'markonm/traces.vim'
 
-let g:completor_racer_binary = '/Users/mario/.cargo/bin/racer'
+let g:completor_racer_binary = '/home/zupzup/.cargo/bin/racer'
 let g:completor_complete_options = 'menuone,noselect'
 
 let g:lightline = {
