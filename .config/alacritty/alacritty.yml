@@ -543,7 +543,6 @@ key_bindings:
   - { key: Minus,    mods: Control,       action: DecreaseFontSize }
   - { key: W,        mods: Control, chars: "\x02\x78"                    }
   - { key: T,        mods: Control, chars: "\x02\x63"                    }
-  - { key: D,        mods: Control, chars: "\x02\x64"                    }
   - { key: K,        mods: Control, action: ClearHistory                 }
   - { key: K,        mods: Control, chars: "\x0c"                        }
   - { key: LBracket, mods: Alt, chars: "\x02\x70"              }
