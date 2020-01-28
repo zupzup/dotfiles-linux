@@ -26,8 +26,6 @@ alias orange='/home/zupzup/tools/orange'
 
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 
-export GREP_OPTIONS="--color"
-
 export HISTSIZE=100000
 export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
@@ -45,7 +43,7 @@ export ACK_COLOR_MATCH='red'
 
 export PATH="/usr/local/bin:$PATH"
 
-export PATH=$PATH:/home/zupzup/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/home/zupzup/go/bin
+export PATH=$PATH:/home/zupzup/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/home/zupzup/go/bin:/home/zupzup/.local/bin
 export LC_CTYPE="en_US.UTF-8"
 
 export PATH="$HOME/.cargo/bin:$PATH"

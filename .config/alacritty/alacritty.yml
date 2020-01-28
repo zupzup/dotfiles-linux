@@ -152,16 +152,16 @@ font:
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
-  #offset:
-  #  x: 0
-  #  y: 0
+  # offset:
+  #   x: 0
+  #   y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
   # increasing `y` moves the glyph upwards.
-  #glyph_offset:
-  #  x: 0
-  #  y: 0
+  # glyph_offset:
+  #   x: 0
+  #   y: 0
 
   # Thin stroke font rendering (macOS only)
   #
@@ -533,6 +533,7 @@ colors:
 key_bindings:
   # (Windows, Linux, and BSD only)
   - { key: V,        mods: Control|Shift, action: Paste            }
+  - { key: V,        mods: Control, action: Paste                  }
   - { key: C,        mods: Control|Shift, action: Copy             }
   - { key: Insert,   mods: Shift,         action: PasteSelection   }
   - { key: Key0,     mods: Control,       action: ResetFontSize    }
@@ -540,7 +541,6 @@ key_bindings:
   - { key: Add,      mods: Control,       action: IncreaseFontSize }
   - { key: Subtract, mods: Control,       action: DecreaseFontSize }
   - { key: Minus,    mods: Control,       action: DecreaseFontSize }
-  - { key: Q,        mods: Control, action: Quit                         }
   - { key: W,        mods: Control, chars: "\x02\x78"                    }
   - { key: T,        mods: Control, chars: "\x02\x63"                    }
   - { key: D,        mods: Control, chars: "\x02\x64"                    }
