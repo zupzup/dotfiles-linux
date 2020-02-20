@@ -20,6 +20,7 @@ Plugin 'itchyny/lightline.vim'
 Bundle "fatih/vim-go"
 Plugin 'w0rp/ale'
 Plugin 'rust-lang/rust.vim'
+Bundle 'git@github.com:arzg/vim-rust-syntax-ext.git'
 Plugin 'maralla/completor.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'markonm/traces.vim'
