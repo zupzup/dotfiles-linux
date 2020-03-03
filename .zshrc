@@ -10,6 +10,8 @@ plugins=(gitfast)
 export LANG=en_US.UTF-8
 source $ZSH/oh-my-zsh.sh
 
+eval `keychain --eval --agents ssh id_rsa 2> /dev/null`
+
 alias ls='ls -G'
 alias ll='ls -lG'
 alias gows='cd ~/go/src/github.com/zupzup'
