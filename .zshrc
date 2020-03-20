@@ -12,6 +12,8 @@ source $ZSH/oh-my-zsh.sh
 
 eval `keychain --eval --agents ssh id_rsa 2> /dev/null`
 
+alias docker='sudo docker'
+alias docker-compose='sudo docker-compose'
 alias ls='ls -G'
 alias ll='ls -lG'
 alias gows='cd ~/go/src/github.com/zupzup'
@@ -22,7 +24,7 @@ alias git='LANG=en_US git'
 alias tma='tmux attach -t'
 alias cr='cargo run'
 alias ct='cargo test'
-alias cck='cargo check'
+alias cck='cargo check --all-targets'
 alias clp='cargo clippy --all-targets --all-features -- -D warnings'
 alias orange='/home/zupzup/tools/orange'
 

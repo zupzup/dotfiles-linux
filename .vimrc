@@ -65,6 +65,7 @@ let g:go_list_type = "quickfix"
 
 let g:ale_fixers = {'rust': ['rustfmt']}
 let g:ale_fix_on_save = 1
+let g:ale_rust_cargo_check_all_targets = 1
 
 let g:ale_linters = {
 \   'javascript': ['eslint'],
