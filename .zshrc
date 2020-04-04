@@ -56,3 +56,5 @@ export GRADLE_OPTS=-Xmx1g
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'
+echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode > /dev/null
+
