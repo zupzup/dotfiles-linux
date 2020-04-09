@@ -24,8 +24,10 @@ Plugin 'maralla/completor.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'markonm/traces.vim'
 
-let g:completor_racer_binary = '/home/zupzup/.cargo/bin/racer'
 let g:completor_complete_options = 'menuone,noselect'
+let g:completor_filetype_map = {}
+let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls'}
+let g:completor_filetype_map.rust = {'ft': 'lsp', 'cmd': 'rls'}
 
 let g:lightline = {
       \ 'colorscheme': 'powerline',
@@ -57,6 +59,10 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_code_completion_enabled = 1
+
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 let g:auto_type_info=0
 let g:go_auto_sameids=0
@@ -144,7 +150,7 @@ set nofoldenable
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType go setlocal omnifunc=
+" autocmd FileType go setlocal omnifunc=
 augroup vimrcEx
   " Clear all autocmds in the group
   autocmd!
