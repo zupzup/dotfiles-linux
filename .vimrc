@@ -46,7 +46,7 @@ if executable('rg')
 endif
 set wildignore+=*/vendor,*/vendor/*,*.png,*.jpg,*.gif,build/*,node_modules/*,*.ttf,*/node_modules/*,*/build/*,*/target,*/target/*
 
-let NERDTreeIgnore=['node_modules', 'vendor']
+let NERDTreeIgnore=['node_modules', 'vendor', 'target']
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -220,6 +220,7 @@ map <leader>t :NERDTreeToggle<CR>
 map <leader>T :NERDTreeFind<CR>
 map <leader>ust :set softtabstop=2 <bar> :set shiftwidth=2 <bar> :set tabstop=2<cr>
 map <leader>et :set expandtab!
+map <leader>stw :%s/\s\+$//e<cr>
 
 " re-sync syntax
 noremap <F12> <Esc>:syntax sync fromstart<CR>
