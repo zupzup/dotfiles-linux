@@ -82,6 +82,7 @@ let g:ale_lint_on_enter = 0
 
 let g:omni_sql_no_default_maps = 1
 
+
 " BASIC EDITING CONFIGURATION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number

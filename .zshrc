@@ -54,6 +54,11 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export GOPATH=/home/zupzup/go
 export GRADLE_OPTS=-Xmx1g
 
+if [ -d "$HOME/adb-fastboot/platform-tools" ] ; then
+ export PATH="$HOME/adb-fastboot/platform-tools:$PATH"
+fi
+
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'
 echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode > /dev/null
