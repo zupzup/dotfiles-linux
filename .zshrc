@@ -47,7 +47,7 @@ export ACK_COLOR_MATCH='red'
 
 export PATH="/usr/local/bin:$PATH"
 
-export PATH=$PATH:/home/zupzup/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/home/zupzup/go/bin:/home/zupzup/.local/bin
+export PATH=$PATH:/home/zupzup/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/home/zupzup/go/bin:/home/zupzup/.local/bin:/home/zupzup/tools/intellij/bin
 export LC_CTYPE="en_US.UTF-8"
 
 export PATH="$HOME/.cargo/bin:$PATH"
