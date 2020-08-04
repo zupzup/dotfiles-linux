@@ -21,7 +21,6 @@ Bundle "fatih/vim-go"
 Plugin 'w0rp/ale'
 Plugin 'rust-lang/rust.vim'
 Plugin 'maralla/completor.vim'
-Plugin 'leafgarland/typescript-vim'
 Plugin 'markonm/traces.vim'
 
 let g:completor_complete_options = 'menuone,noselect'

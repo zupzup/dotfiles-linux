@@ -14,21 +14,21 @@ eval `keychain --eval --agents ssh id_rsa 2> /dev/null`
 
 alias docker='sudo docker'
 alias docker-compose='sudo docker-compose'
-alias ls='ls -G'
-alias ll='ls -lG'
+alias ll='exa -al'
+alias l='exa -al'
+alias ct='bat'
 alias gows='cd ~/go/src/github.com/zupzup'
 alias rst='cd ~/dev/oss/rust/'
 alias tmlr='cd ~/dev/work/timeular'
-alias gotmlr='cd ~/go/src/gitlab.com/timeular'
 alias git='LANG=en_US git'
 alias tma='tmux attach -t'
 alias cr='cargo run'
-alias ct='cargo test'
 alias cck='cargo check --all-targets'
 alias clp='cargo clippy --all-targets --all-features -- -D warnings'
-alias orange='/home/zupzup/tools/orange'
+alias vi='nvim'
+alias vim='nvim'
 
-export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
+#export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 
 export HISTSIZE=100000
 export HISTFILE="$HOME/.history"
@@ -47,7 +47,7 @@ export ACK_COLOR_MATCH='red'
 
 export PATH="/usr/local/bin:$PATH"
 
-export PATH=$PATH:/home/zupzup/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/home/zupzup/go/bin:/home/zupzup/.local/bin:/home/zupzup/tools/intellij/bin
+export PATH=$PATH:/home/zupzup/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin:/home/zupzup/go/bin:/home/zupzup/.local/bin:/home/zupzup/tools/intellij/bin
 export LC_CTYPE="en_US.UTF-8"
 
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -62,4 +62,3 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'
 echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode > /dev/null
-
