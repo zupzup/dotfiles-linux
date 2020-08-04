@@ -1,27 +1,25 @@
-"autocmd!
-
 set nocompatible              " be iMproved
 filetype off                  " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call plug#begin('~/.vim/plugged')
 
-Bundle 'gmarik/vundle'
-Bundle 'https://github.com/kien/ctrlp.vim'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'pangloss/vim-javascript'
-Bundle 'Raimondi/delimitMate'
-Bundle 'tpope/vim-commentary'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "scrooloose/nerdtree"
-Bundle "milkypostman/vim-togglelist"
-Plugin 'itchyny/lightline.vim'
-Bundle "fatih/vim-go"
-Plugin 'w0rp/ale'
-Plugin 'rust-lang/rust.vim'
-Plugin 'maralla/completor.vim'
-Plugin 'markonm/traces.vim'
+Plug 'gmarik/vundle'
+Plug 'https://github.com/kien/ctrlp.vim'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'pangloss/vim-javascript'
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-commentary'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'scrooloose/nerdtree'
+Plug 'milkypostman/vim-togglelist'
+Plug 'itchyny/lightline.vim'
+Plug 'fatih/vim-go'
+Plug 'w0rp/ale'
+Plug 'rust-lang/rust.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'markonm/traces.vim'
+call plug#end()
 
 let g:completor_complete_options = 'menuone,noselect'
 let g:completor_filetype_map = {}
@@ -88,6 +86,10 @@ set number
 set nocompatible
 " allow unsaved background buffers and remember marks/undo for them
 set hidden
+set nobackup
+set nowritebackup
+set updatetime=300
+set shortmess+=c
 " remember more commands and search history
 set history=10000
 set expandtab
@@ -109,7 +111,7 @@ set ignorecase smartcase
 set nocursorline
 set nocursorcolumn
 set norelativenumber
-set cmdheight=1
+set cmdheight=2
 set switchbuf=useopen
 set showtabline=4
 set winwidth=79
