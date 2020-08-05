@@ -25,10 +25,7 @@ alias tma='tmux attach -t'
 alias cr='cargo run'
 alias cck='cargo check --all-targets'
 alias clp='cargo clippy --all-targets --all-features -- -D warnings'
-alias vi='nvim'
 alias vim='nvim'
-
-#export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 
 export HISTSIZE=100000
 export HISTFILE="$HOME/.history"

@@ -26,10 +26,11 @@ let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls'}
 let g:completor_filetype_map.rust = {'ft': 'lsp', 'cmd': 'rls'}
 
 if has('nvim')
-    set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+    set guicursor=
     set inccommand=nosplit
     noremap <C-q> :confirm qall<CR>
 end
+
 if !has('gui_running')
   set t_Co=256
 endif
