@@ -15,7 +15,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'milkypostman/vim-togglelist'
 Plug 'itchyny/lightline.vim'
 Plug 'fatih/vim-go'
-Plug 'w0rp/ale'
 Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'markonm/traces.vim'
@@ -25,6 +24,15 @@ let g:completor_complete_options = 'menuone,noselect'
 let g:completor_filetype_map = {}
 let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls'}
 let g:completor_filetype_map.rust = {'ft': 'lsp', 'cmd': 'rls'}
+
+if has('nvim')
+    set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+    set inccommand=nosplit
+    noremap <C-q> :confirm qall<CR>
+end
+if !has('gui_running')
+  set t_Co=256
+endif
 
 let g:lightline = {
       \ 'colorscheme': 'powerline',
@@ -45,9 +53,29 @@ set wildignore+=*/vendor,*/vendor/*,*.png,*.jpg,*.gif,build/*,node_modules/*,*.t
 
 let NERDTreeIgnore=['node_modules', 'vendor', 'target']
 
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
 
 " go
 let g:go_highlight_methods = 1
@@ -66,16 +94,9 @@ let g:go_auto_sameids=0
 
 let g:go_list_type = "quickfix"
 
-let g:ale_fixers = {'rust': ['rustfmt']}
-let g:ale_fix_on_save = 1
-let g:ale_rust_cargo_check_all_targets = 1
-
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'html': [],
-\}
-
-let g:ale_lint_on_enter = 0
+let g:rustfmt_autosave = 1
+let g:rustfmt_emit_files = 1
+let g:rustfmt_fail_silently = 0
 
 let g:omni_sql_no_default_maps = 1
 
@@ -149,6 +170,7 @@ set modelines=3
 " Turn folding off for real, hopefully
 set foldmethod=manual
 set nofoldenable
+set mouse=a
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
