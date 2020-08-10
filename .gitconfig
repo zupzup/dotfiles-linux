@@ -1,0 +1,33 @@
+[push]
+	default = simple
+[user]
+	name = Mario Zupan
+	email = mario@zupzup.org 
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[color]
+	ui = auto
+[core]
+	editor = vim
+[merge]
+	tool = diffmerge
+[mergetool "diffmerge"]
+	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+    trustExitCode = true
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    cl = clone
+    diff = diff --word-diff
+    lg = log -p
+    lf = log --name-status
+    le = log --oneline --decorate
+    ls = ls-files
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
