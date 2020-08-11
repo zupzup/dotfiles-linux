@@ -10,7 +10,7 @@ env:
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  TERM: alacritty 
+  TERM: 'xterm-256color'
 
 window:
   # Window dimensions (changes require restart)
@@ -292,11 +292,11 @@ colors:
 # The value `0.0` is completely transparent and `1.0` is opaque.
 #background_opacity: 1.0
 
-#selection:
-  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+selection:
+  # semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
-  #save_to_clipboard: false
+  save_to_clipboard: true
 
 # Allow terminal applications to change Alacritty's window title.
 #dynamic_title: true
@@ -541,12 +541,12 @@ key_bindings:
   - { key: Add,      mods: Control,       action: IncreaseFontSize }
   - { key: Subtract, mods: Control,       action: DecreaseFontSize }
   - { key: Minus,    mods: Control,       action: DecreaseFontSize }
-  - { key: W,        mods: Control, chars: "\x02\x78"                    }
-  - { key: T,        mods: Control, chars: "\x02\x63"                    }
+  # - { key: W,        mods: Control, chars: "\x02\x78"                    }
+  # - { key: T,        mods: Control, chars: "\x02\x63"                    }
   - { key: K,        mods: Control, action: ClearHistory                 }
   - { key: K,        mods: Control, chars: "\x0c"                        }
-  - { key: LBracket, mods: Alt, chars: "\x02\x70"              }
-  - { key: RBracket, mods: Alt, chars: "\x02\x6e"              }
+  # - { key: LBracket, mods: Alt, chars: "\x02\x70"              }
+  # - { key: RBracket, mods: Alt, chars: "\x02\x6e"              }
 
   # (Windows only)
   #- { key: Return,   mods: Alt,           action: ToggleFullscreen }
