@@ -31,3 +31,4 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export CM_DIR=/home/zupzup
 export CM_MAX_CLIPS=10000
 export CM_IGNORE_WINDOW="1Password"
+export GTK_THEME=Adwaita:dark
