@@ -1,0 +1,23 @@
+set from = "mario@zupzup.org"
+set realname = "mario zupan"
+
+set smtp_url = "smtp://mario@zupzup.org@smtp.fastmail.com:993/"
+set my_pw_fm =`secret-tool lookup my_pw_fm fastmail.com`
+set smtp_pass=$my_pw_fm; set smtp_pass=$my_pw_fm
+set imap_user = "mario@zupzup.org"
+set imap_pass=$my_pw_fm; set smtp_pass=$my_pw_fm
+
+set spoolfile="imaps://imap.fastmail.com"
+set folder="imaps://imap.fastmail.com/INBOX"
+
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+
+set mail_check = 60
+set move = no
+set sort = threads
+set editor = "vim"
+set beep = no
+set beep_new = no
+unmailboxes *
