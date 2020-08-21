@@ -18,6 +18,14 @@ Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'markonm/traces.vim'
+Plug 'udalov/kotlin-vim'
+
+Plug 'dense-analysis/ale', { 'for': 'kotlin' }
+
+let g:ale_fixers = {'kotlin': ['ktlint']}
+let g:ale_linters = {'kotlin': ['ktlint']}
+let g:ale_fix_on_save = 1
+
 call plug#end()
 
 let g:completor_complete_options = 'menuone,noselect'
@@ -171,7 +179,6 @@ set modelines=3
 " Turn folding off for real, hopefully
 set foldmethod=manual
 set nofoldenable
-set mouse=a
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -245,7 +252,6 @@ map <leader>t :NERDTreeToggle<CR>
 map <leader>T :NERDTreeFind<CR>
 map <leader>ust :set softtabstop=2 <bar> :set shiftwidth=2 <bar> :set tabstop=2<cr>
 map <leader>et :set expandtab!
-map <leader>stw :%s/\s\+$//e<cr>
 
 " re-sync syntax
 noremap <F12> <Esc>:syntax sync fromstart<CR>
