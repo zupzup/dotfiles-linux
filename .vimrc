@@ -145,7 +145,7 @@ set hlsearch
 set ignorecase smartcase
 set nocursorline
 set nocursorcolumn
-set norelativenumber
+set relativenumber
 set cmdheight=2
 set switchbuf=useopen
 set showtabline=4
@@ -250,6 +250,8 @@ map <leader>n :bn<cr>
 map <leader>N :bp<cr>
 
 map <leader>mk :!make test<cr>
+noremap <F3> :set norelativenumber<cr>
+noremap <F4> :set relativenumber<cr>
 
 map <leader>f :CtrlP<cr>
 map <leader>F :CtrlPMRU<cr>
@@ -270,7 +272,7 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
-map q <nop>
+" map q <nop>
 
 inoremap <Nul> <C-x><C-o>
 vnoremap . :normal .<CR>
