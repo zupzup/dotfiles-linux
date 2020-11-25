@@ -50,7 +50,6 @@ export LC_CTYPE="en_US.UTF-8"
 export PATH="$HOME/.cargo/bin:$PATH"
 export GOPATH=/home/zupzup/go
 export GRADLE_OPTS=-Xmx1g
-export GTK_THEME="Adwaita:dark"
 
 export CM_DIR=/home/zupzup
 export CM_MAX_CLIPS=10000
