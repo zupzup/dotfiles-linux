@@ -1,0 +1,2 @@
+#! /bin/sh
+/usr/bin/scrot --select /home/zupzup/Pictures/%Y-%m-%d-%s.jpg

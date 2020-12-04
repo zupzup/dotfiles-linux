@@ -1,0 +1,3 @@
+#! /bin/sh
+
+LD_PRELOAD=/home/zupzup/tools/spotifywm/spotifywm.so /usr/share/spotify/spotify

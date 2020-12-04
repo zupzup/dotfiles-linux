@@ -1,0 +1,7 @@
+clipmenu
+clipnotify
+dwm
+dmenu
+slstatus
+spotifywm
+tabbed
