@@ -19,6 +19,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'markonm/traces.vim'
 Plug 'udalov/kotlin-vim'
+Plug 'lervag/vimtex'
 
 Plug 'dense-analysis/ale', { 'for': 'kotlin' }
 

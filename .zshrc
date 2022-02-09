@@ -19,14 +19,19 @@ alias ct='bat'
 alias gows='cd ~/go/src/github.com/zupzup'
 alias rst='cd ~/dev/oss/rust/'
 alias tmlr='cd ~/dev/work/timeular'
+alias uni="cd ~/Tresors/mario\'s\ tresor/uni"
 alias git='LANG=en_US git'
 alias tma='tmux attach -t'
 alias cr='cargo run'
 alias cck='cargo check --all-targets'
 alias clp='cargo clippy --all-targets --all-features -- -D warnings'
 alias vim='nvim'
+alias vi='nvim'
+alias is='cd ~/tools/infosec'
+alias wrt="cd ~/Tresors/mario\'s\ tresor/writing"
 
-export HISTSIZE=100000
+export HISTSIZE=1000000
+export HISTFILESIZE=2000000
 export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
 
@@ -44,12 +49,12 @@ export ACK_COLOR_MATCH='red'
 export PATH="/usr/local/bin:$PATH"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-export PATH=$PATH:/home/zupzup/tools:/home/zupzup/tools/thunderbird:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin:/home/zupzup/go/bin:/home/zupzup/.local/bin:/home/zupzup/tools/ideac/bin:/usr/pgadmin4/bin
+export PATH=$PATH:/home/zupzup/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin:/home/zupzup/go/bin:/home/zupzup/.local/bin:/home/zupzup/tools/ideac/bin:/usr/pgadmin4/bin
 export LC_CTYPE="en_US.UTF-8"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export GOPATH=/home/zupzup/go
-export GRADLE_OPTS=-Xmx1g
+export GRADLE_OPTS=-Xmx2g
 
 export CM_DIR=/home/zupzup
 export CM_MAX_CLIPS=10000
