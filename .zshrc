@@ -29,6 +29,7 @@ alias vim='nvim'
 alias vi='nvim'
 alias is='cd ~/tools/infosec'
 alias wrt="cd ~/Tresors/mario\'s\ tresor/writing"
+alias ltxmk='latexmk -verbose -pdf -file-line-error -synctex=1 -interaction=nonstopmode'
 
 export HISTSIZE=1000000
 export HISTFILESIZE=2000000
