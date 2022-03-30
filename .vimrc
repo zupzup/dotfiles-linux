@@ -255,6 +255,7 @@ map <leader>N :bp<cr>
 map <leader>mk :!make test<cr>
 noremap <F3> :set norelativenumber<cr>
 noremap <F4> :set relativenumber<cr>
+noremap <F5> :w !detex \| wc -w<CR>
 
 map <leader>f :CtrlP<cr>
 map <leader>F :CtrlPMRU<cr>
