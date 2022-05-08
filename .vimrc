@@ -3,7 +3,6 @@ filetype off                  " required!
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'gmarik/vundle'
 Plug 'https://github.com/kien/ctrlp.vim'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
@@ -22,19 +21,13 @@ Plug 'udalov/kotlin-vim'
 Plug 'lervag/vimtex'
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
-
 Plug 'dense-analysis/ale', { 'for': 'kotlin' }
+
+call plug#end()
 
 let g:ale_fixers = {'kotlin': ['ktlint']}
 let g:ale_linters = {'kotlin': ['ktlint']}
 let g:ale_fix_on_save = 1
-
-call plug#end()
-
-let g:completor_complete_options = 'menuone,noselect'
-let g:completor_filetype_map = {}
-let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls'}
-let g:completor_filetype_map.rust = {'ft': 'lsp', 'cmd': 'rls'}
 
 if has('nvim')
     set guicursor=
@@ -110,6 +103,8 @@ let g:auto_type_info=0
 let g:go_auto_sameids=0
 
 let g:go_list_type = "quickfix"
+
+let g:ale_fixers = { 'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines'] }
 
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
