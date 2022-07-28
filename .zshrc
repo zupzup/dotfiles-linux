@@ -12,6 +12,8 @@ source $ZSH/oh-my-zsh.sh
 
 eval `keychain --eval --agents ssh id_rsa 2> /dev/null`
 
+alias cw='calories -w'
+alias ca='calories add'
 alias tig='gitui'
 alias ll='exa -al'
 alias l='exa -al'
@@ -19,7 +21,9 @@ alias ct='bat'
 alias gows='cd ~/go/src/github.com/zupzup'
 alias rst='cd ~/dev/oss/rust/'
 alias tmlr='cd ~/dev/work/timeular'
+alias pflegenavi='cd ~/dev/work/pflegenavi'
 alias uni="cd ~/Tresors/mario\'s\ tresor/uni"
+alias phil="cd ~/Tresors/mario\'s\ tresor/uni/Philosophie"
 alias git='LANG=en_US git'
 alias tma='tmux attach -t'
 alias cr='cargo run'
