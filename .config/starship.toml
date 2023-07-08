@@ -1,0 +1,47 @@
+format = """
+$username\
+$hostname\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$fill\
+$cmd_duration\
+$line_break\
+$directory\
+$character"""
+
+[fill]
+symbol = " "
+
+[username]
+show_always = true
+disabled = false
+
+[directory]
+read_only = " "
+truncation_length = 4
+truncate_to_repo = true
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](green)"
+vicmd_symbol = "[❮](green)"
+
+[git_branch]
+symbol = ""
+format = "[$symbol$branch]($style) "
+style = 'bold yellow'
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "cyan"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[cmd_duration]
+format = "[$duration]($style)"
+style = "yellow"
+

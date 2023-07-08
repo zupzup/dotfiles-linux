@@ -1,14 +1,8 @@
-export ZSH="/home/zupzup/.oh-my-zsh"
-ZSH_THEME="mz"
-
 CASE_SENSITIVE="true"
 DISABLE_AUTO_UPDATE="true"
 DISABLE_CORRECTION="true"
 
-plugins=(gitfast)
-
 export LANG=en_US.UTF-8
-source $ZSH/oh-my-zsh.sh
 
 eval `keychain --eval --agents ssh id_rsa 2> /dev/null`
 
@@ -75,3 +69,4 @@ fi
 export FZF_DEFAULT_COMMAND='ag -g ""'
 echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode > /dev/null
 
+eval "$(starship init zsh)"
