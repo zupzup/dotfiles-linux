@@ -14,10 +14,6 @@ $character"""
 [fill]
 symbol = " "
 
-[username]
-show_always = true
-disabled = false
-
 [directory]
 read_only = " "
 truncation_length = 4
