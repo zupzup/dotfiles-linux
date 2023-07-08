@@ -37,5 +37,5 @@ Left = ["pavucontrol"]
 [[modules]]
 name = "date"
 instance = "0"
-format = "| %F %X"
+format = "| %F %R"
 html_escape = false
