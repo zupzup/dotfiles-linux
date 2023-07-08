@@ -1,3 +1,4 @@
 #! /bin/sh
 
-i3lock -e -c 222222
+swaylock -f -c 222222
+
