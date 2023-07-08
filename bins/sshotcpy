@@ -1,0 +1,3 @@
+#! /bin/sh
+wayshot -s "$(slurp)" --stdout | wl-copy
+

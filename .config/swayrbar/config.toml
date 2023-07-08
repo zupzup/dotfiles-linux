@@ -1,0 +1,41 @@
+refresh_interval = 1000
+
+
+[[modules]]
+name = "battery"
+instance = "0"
+format = "Battery: {state_of_charge:{:5.1}}%"
+html_escape = false
+
+[[modules]]
+name = "pactl"
+instance = "0"
+format = "| Volume: {volume:{:3}}%{muted}"
+html_escape = true
+
+[modules.on_click]
+Right = [
+    "pactl",
+    "set-sink-mute",
+    "@DEFAULT_SINK@",
+    "toggle",
+]
+WheelUp = [
+    "pactl",
+    "set-sink-volume",
+    "@DEFAULT_SINK@",
+    "+1%",
+]
+WheelDown = [
+    "pactl",
+    "set-sink-volume",
+    "@DEFAULT_SINK@",
+    "-1%",
+]
+Left = ["pavucontrol"]
+
+[[modules]]
+name = "date"
+instance = "0"
+format = "| %F %X"
+html_escape = false
