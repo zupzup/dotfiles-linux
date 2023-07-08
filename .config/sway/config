@@ -15,6 +15,7 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term alacritty
+set $sleep_cmd systemctl suspend
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -36,9 +37,14 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         timeout 600 'swaylock -f -c 000000' \
+         timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         timeout 2400 '$sleep_cmd' \
          before-sleep 'swaylock -f -c 000000'
+
+for_window [class="firefox"] shortcuts_inhibitor disable
+for_window [class="firefox"] inhibit_idle fullscreen
+for_window [shell=".*"] inhibit_idle fullscreen
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -60,6 +66,10 @@ exec swayidle -w \
 input "type:keyboard" {
     repeat_delay 220
     repeat_rate 80
+    xkb_layout us
+    # xkb_variant intl
+    # xkb_variant alt-intl
+    xkb_variant altgr-intl
 }
 
 ### Key bindings
