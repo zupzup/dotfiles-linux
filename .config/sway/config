@@ -37,9 +37,9 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 600 'swaylock -f -c 000000' \
-         timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         timeout 2400 '$sleep_cmd' \
+         timeout 1800 'swaylock -f -c 000000' \
+         timeout 2400 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         timeout 3600 '$sleep_cmd' \
          before-sleep 'swaylock -f -c 000000'
 
 for_window [class="firefox"] shortcuts_inhibitor disable
@@ -226,22 +226,37 @@ assign [instance="notable"] workspace number 4
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    swaybar_command swaybar
-    # Use swayrbar as status command with some logging output which
-    # is redirected to /tmp/swayrbar.log.  Be sure to only redirect
-    # stderr because the swaybar protocol requires the status_command
-    # to emit JSON to stdout which swaybar reads.
-    status_command env RUST_BACKTRACE=1 RUST_LOG=swayr=debug swayrbar 2> /tmp/swayrbar.log
+    font pango:DejaVu Sans Mono, FontAwesome 11
     position top
-    # font pango:Iosevka 11
-    height 20
-
+    status_command /home/zupzup/.cargo/bin/i3status-rs /home/zupzup/.config/i3status-rust/config.toml
     colors {
-        statusline #32323200
-        background #323232
-        # inactive_workspace #32323200 #32323200 #5c5c5c
+        separator #666666
+        background #222222
+        statusline #dddddd
+        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
     }
 }
+
+# bar {
+#     swaybar_command swaybar
+#     # Use swayrbar as status command with some logging output which
+#     # is redirected to /tmp/swayrbar.log.  Be sure to only redirect
+#     # stderr because the swaybar protocol requires the status_command
+#     # to emit JSON to stdout which swaybar reads.
+#     status_command ~/tools/bar 
+#     position top
+#     # font pango:Iosevka 11
+#     height 20
+
+#     colors {
+#         statusline #32323200
+#         background #323232
+#         # inactive_workspace #32323200 #32323200 #5c5c5c
+#     }
+# }
 
 # bar {
 #     position top

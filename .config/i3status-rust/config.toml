@@ -1,0 +1,26 @@
+icons_format = "{icon}"
+
+[theme]
+theme = "dracula"
+
+[icons]
+icons = "awesome4"
+
+[[block]]
+block = "battery"
+format = "$icon $percentage"
+full_format = "$icon $percentage"
+empty_format = "$icon $percentage"
+charging_format = "$icon $percentage"
+not_charging_format = "$icon $percentage"
+
+[[block]]
+block = "sound"
+[[block.click]]
+button = "left"
+cmd = "pavucontrol"
+
+[[block]]
+block = "time"
+interval = 60
+format = " $timestamp.datetime(f:'%d.%m.%y %R') "
