@@ -37,9 +37,9 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 1800 'swaylock -f -c 000000' \
-         timeout 2400 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         timeout 3600 '$sleep_cmd' \
+         timeout 600 'swaylock -f -c 000000' \
+         timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         timeout 1800 '$sleep_cmd' \
          before-sleep 'swaylock -f -c 000000'
 
 for_window [class="firefox"] shortcuts_inhibitor disable
@@ -81,7 +81,7 @@ input "type:keyboard" {
 
     # Kill focused window
     bindsym $mod+Shift+q kill
-    bindsym $mod+Shift+j kill
+    bindsym $mod+Shift+k kill
 
     # Start your launcher
     bindsym $mod+p exec $menu
