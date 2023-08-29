@@ -4,6 +4,7 @@
 #
 # Read `man 5 sway` for a complete reference.
 exec_always /home/zupzup/tools/lid.sh
+exec_always /usr/local/bin/wl-clipboard-history -t
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -95,7 +96,7 @@ input "type:keyboard" {
 
     # Reload the configuration file
     bindsym $mod+Shift+r reload
-    bindsym $mod+Shift+c exec clipmenu
+    bindsym $mod+Shift+c exec wlclipdmenu
     bindsym $mod+Shift+f10 exec sshot
 
     # Exit sway (logs you out of your Wayland session)
