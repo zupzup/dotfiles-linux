@@ -56,10 +56,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export GOPATH=/home/zupzup/go
 export GRADLE_OPTS=-Xmx2g
 
-export CM_DIR=/home/zupzup
-export CM_MAX_CLIPS=10000
-export CM_IGNORE_WINDOW="1Password"
-
 if [ -d "$HOME/adb-fastboot/platform-tools" ] ; then
  export PATH="$HOME/adb-fastboot/platform-tools:$PATH"
 fi

@@ -1,0 +1,2 @@
+#! /bin/sh
+wl-clipboard-history -p "$(wl-clipboard-history -l 50 | dmenu -l 50 | cut -d ',' -f1)" | wl-copy
