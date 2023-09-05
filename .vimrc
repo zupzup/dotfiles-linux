@@ -17,7 +17,6 @@ Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'markonm/traces.vim'
-Plug 'udalov/kotlin-vim'
 Plug 'lervag/vimtex'
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -25,8 +24,7 @@ Plug 'dense-analysis/ale', { 'for': 'kotlin' }
 
 call plug#end()
 
-let g:ale_fixers = {'kotlin': ['ktlint']}
-let g:ale_linters = {'kotlin': ['ktlint']}
+let g:ale_fixers = { 'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines'] }
 let g:ale_fix_on_save = 1
 
 if has('nvim')
@@ -105,7 +103,6 @@ let g:go_auto_sameids=0
 
 let g:go_list_type = "quickfix"
 
-let g:ale_fixers = { 'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines'] }
 
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
