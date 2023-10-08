@@ -47,7 +47,6 @@ export ACK_COLOR_MATCH='red'
 
 export PATH="/usr/local/bin:$PATH"
 export PATH=$HOME/.local/bin:$PATH
-export _JAVA_AWT_WM_NONREPARENTING=1
 
 export PATH=$PATH:/home/zupzup/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin:/home/zupzup/go/bin:/home/zupzup/.local/bin:/home/zupzup/tools/ideac/bin:/usr/pgadmin4/bin
 export LC_CTYPE="en_US.UTF-8"
