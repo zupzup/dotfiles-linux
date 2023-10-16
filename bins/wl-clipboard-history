@@ -10,7 +10,7 @@ if [ ! -f "$clipboard_file" ]; then
     CREATE TABLE c (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, contents text);
     CREATE TRIGGER rotate_rows AFTER INSERT ON c
    BEGIN
-     DELETE FROM c WHERE id <= (SELECT id FROM c ORDER BY id DESC LIMIT 1000, 1);
+     DELETE FROM c WHERE id <= (SELECT id FROM c ORDER BY id DESC LIMIT 5000, 1);
    END;"
 fi
 
