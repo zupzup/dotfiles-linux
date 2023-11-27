@@ -27,8 +27,9 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
-export _JAVA_AWT_WM_NONREPARENTING=1
-export CM_DIR=/home/zupzup
-export CM_MAX_CLIPS=10000
-export CM_IGNORE_WINDOW="1Password"
-export GTK_THEME=Adwaita:dark
+export PATH="$HOME/tools:$PATH"
+
+export HISTSIZE=1000000
+export HISTFILE="$HOME/.history"
+export SAVEHIST=$HISTSIZE
+export MOZ_ENABLE_WAYLAND=1
