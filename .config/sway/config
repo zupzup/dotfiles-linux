@@ -6,6 +6,8 @@
 exec_always /home/zupzup/tools/lid.sh
 exec_always /usr/local/bin/wl-clipboard-history -t
 exec way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1
+
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
