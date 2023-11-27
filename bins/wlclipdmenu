@@ -1,2 +1,3 @@
 #! /bin/sh
-wl-clipboard-history -p "$(wl-clipboard-history -l 5000 | dmenu -l 50 | cut -d ',' -f1)" | wl-copy
+cliphist list | dmenu -l 25  | cliphist decode | wl-copy
+# wl-clipboard-history -p "$(wl-clipboard-history -l 50 | dmenu -l 50 | cut -d ',' -f1)" | wl-copy

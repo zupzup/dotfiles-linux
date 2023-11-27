@@ -5,6 +5,7 @@
 # Read `man 5 sway` for a complete reference.
 exec_always /home/zupzup/tools/lid.sh
 exec_always /usr/local/bin/wl-clipboard-history -t
+exec_always wl-paste --watch cliphist store
 exec way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1
 
 exec /home/zupzup/tools/xdgstuff.sh
