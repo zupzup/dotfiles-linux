@@ -45,11 +45,11 @@ exec swayidle -w \
          timeout 1800 '$sleep_cmd' \
          before-sleep 'swaylock -f -c 000000'
 
-for_window [class="firefox"] shortcuts_inhibitor disable
+for_window [app_id="firefox"] shortcuts_inhibitor disable
 for_window [class="Google-chrome"] shortcuts_inhibitor disable
 for_window [instance="zoom"] shortcuts_inhibitor disable
 for_window [instance="skype"] shortcuts_inhibitor disable
-for_window [class="firefox"] inhibit_idle fullscreen
+for_window [app_id="firefox"] inhibit_idle fullscreen
 for_window [class="Google-chrome"] inhibit_idle fullscreen
 for_window [instance="zoom"] inhibit_idle fullscreen
 for_window [instance="skype"] inhibit_idle fullscreen
@@ -234,7 +234,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-assign [class="firefox"] workspace number 2
+assign [app_id="firefox"] workspace number 2
 assign [instance="signal"] workspace number 9
 assign [instance="spotify"] workspace number 8
 assign [instance="tresorit"] workspace number 5
