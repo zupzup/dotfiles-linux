@@ -6,6 +6,7 @@
 exec_always /home/zupzup/tools/lid.sh
 exec_always /usr/local/bin/wl-clipboard-history -t
 exec_always wl-paste --watch cliphist store
+exec_always /usr/bin/gammastep
 exec way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1
 
 exec /home/zupzup/tools/xdgstuff.sh
