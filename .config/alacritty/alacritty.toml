@@ -1,0 +1,92 @@
+[colors.normal]
+black = "0x000000"
+blue = "0x7aa6da"
+cyan = "0x70c0ba"
+green = "0xb9ca4a"
+magenta = "0xc397d8"
+red = "0xd54e53"
+white = "0xeaeaea"
+yellow = "0xe6c547"
+
+[colors.primary]
+background = "0x101010"
+foreground = "0xe5e5e5"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 10.0
+
+[font.normal]
+family = "monospace"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "PasteSelection"
+key = "Insert"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "NumpadAdd"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "NumpadSubtract"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ClearHistory"
+key = "K"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "K"
+mods = "Control"
+
+[selection]
+save_to_clipboard = true
+
+[window]
+decorations = "full"
+
+[window.dimensions]
+columns = 150
+lines = 40
+
+[window.padding]
+x = 0
+y = 0
