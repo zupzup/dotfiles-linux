@@ -21,8 +21,8 @@ alias phil="cd ~/Tresors/mario\'s\ tresor/uni/Philosophie"
 alias git='LANG=en_US git'
 alias tma='tmux attach -t'
 alias cr='cargo run'
-alias cck='cargo check --all-targets'
-alias clp='cargo clippy --all-targets --all-features -- -D warnings'
+alias cck='cargo check --all-targets --all-features'
+alias clp='cargo clippy --all-targets --all-features'
 alias vim='nvim'
 alias vi='nvim'
 alias is='cd ~/tools/infosec'
@@ -62,6 +62,5 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'
-echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode > /dev/null
 
 eval "$(starship init zsh)"
