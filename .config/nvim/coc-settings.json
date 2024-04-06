@@ -4,12 +4,6 @@
     "rust-analyzer.updates.channel": "stable",
     "rust-analyzer.inlayHints.chainingHints": false,
     "rust-analyzer.procMacro.enable": true,
-    "rust-analyzer.checkOnSave.overrideCommand": ["cargo", "clippy", "--workspace", "--message-format=json", "--all-targets", "--all-features"],
     "rust-analyzer.cargo.features": "all",
-    "languageserver": {
-        "kotlin": {
-            "command": "~/lsp/kotlin/server/bin/kotlin-language-server",
-            "filetypes": ["kotlin"]
-        }
-    }
+    "rust-analyzer.checkOnSave.overrideCommand": ["cargo", "clippy", "--workspace", "--message-format=json", "--all-targets", "--all-features"],
 }
