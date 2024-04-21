@@ -3,7 +3,7 @@ filetype off                  " required!
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'https://github.com/kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
