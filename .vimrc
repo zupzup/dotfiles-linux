@@ -15,7 +15,6 @@ Plug 'milkypostman/vim-togglelist'
 Plug 'itchyny/lightline.vim'
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'markonm/traces.vim'
 Plug 'lervag/vimtex'
 
@@ -24,7 +23,6 @@ call plug#end()
 if has('nvim')
     set guicursor=
     set inccommand=nosplit
-    noremap <C-q> :confirm qall<CR>
 end
 
 let g:lightline = {
@@ -44,37 +42,8 @@ if executable('rg')
 endif
 set wildignore+=*/vendor,*/vendor/*,*.png,*.jpg,*.gif,build/*,node_modules/*,*.ttf,*/node_modules/*,*/build/*,*/target,*/target/*
 
-let NERDTreeIgnore=['node_modules', 'vendor', 'target']
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-  " Insert <tab> when previous text is space, refresh completion if not.
-inoremap <silent><expr> <TAB>
-	\ coc#pum#visible() ? coc#pum#next(1):
-	\ <SID>check_back_space() ? "\<Tab>" :
-	\ coc#refresh()
-  inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
-
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
-
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+let NERDTreeIgnore=['node_modules', 'vendor', 'target', 'build']
+let g:auto_type_info=0
 
 " go
 let g:go_highlight_methods = 1
@@ -84,22 +53,16 @@ let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_code_completion_enabled = 1
-
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
-
-let g:auto_type_info=0
 let g:go_auto_sameids=0
-
 let g:go_list_type = "quickfix"
 
 
+" rust
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
-
-let g:omni_sql_no_default_maps = 1
-
 
 " BASIC EDITING CONFIGURATION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -223,22 +186,14 @@ nnoremap <leader>s :call OpenSplit()<cr>
 function! OpenSplit()
   normal! v
 endfunction
-" Align selected lines
-vnoremap <leader>ib :!align<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OPEN FILES IN DIRECTORY OF CURRENT FILE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>e :edit %%
 
 map <leader>n :bn<cr>
 map <leader>N :bp<cr>
-
-map <leader>mk :!make test<cr>
-noremap <F3> :set norelativenumber<cr>
-noremap <F4> :set relativenumber<cr>
-noremap <F5> :w !detex \| wc -w<CR>
 
 map <leader>f :CtrlP<cr>
 map <leader>F :CtrlPMRU<cr>
@@ -247,13 +202,8 @@ map <leader>T :NERDTreeFind<CR>
 map <leader>ust :set softtabstop=2 <bar> :set shiftwidth=2 <bar> :set tabstop=2<cr>
 map <leader>et :set expandtab!
 
-" re-sync syntax
-noremap <F12> <Esc>:syntax sync fromstart<CR>
-inoremap <F12> <C-o>:syntax sync fromstart<CR>
-
-
 """"""""""""""""""""""""""""""""""
-" DISABLE ARROW KEYS 
+" DISABLE ARROW KEYS
 """"""""""""""""""""""""""""""""""
 map <up> <nop>
 map <down> <nop>
