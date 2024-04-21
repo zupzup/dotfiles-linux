@@ -6,11 +6,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/kien/ctrlp.vim'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-commentary'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'milkypostman/vim-togglelist'
 Plug 'itchyny/lightline.vim'
 Plug 'fatih/vim-go'
@@ -18,24 +18,14 @@ Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'markonm/traces.vim'
 Plug 'lervag/vimtex'
-Plug 'leafgarland/typescript-vim'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'dense-analysis/ale', { 'for': 'kotlin' }
 
 call plug#end()
-
-let g:ale_fixers = { 'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines'] }
-let g:ale_fix_on_save = 1
 
 if has('nvim')
     set guicursor=
     set inccommand=nosplit
     noremap <C-q> :confirm qall<CR>
 end
-
-if !has('gui_running')
-  set t_Co=256
-endif
 
 let g:lightline = {
       \ 'colorscheme': 'powerline',
