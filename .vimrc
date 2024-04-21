@@ -24,7 +24,6 @@ call plug#end()
 if has('nvim')
     set guicursor=
     set inccommand=nosplit
-    noremap <C-q> :confirm qall<CR>
 end
 
 let g:lightline = {
