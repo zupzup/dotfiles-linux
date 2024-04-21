@@ -4,7 +4,7 @@ DISABLE_CORRECTION="true"
 
 export LANG=en_US.UTF-8
 
-eval `keychain --eval --agents ssh id_rsa 2> /dev/null`
+eval `keychain --eval --agents ssh id_ed25519 2> /dev/null`
 
 alias cw='calories -w'
 alias ca='calories add'
