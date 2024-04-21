@@ -61,7 +61,8 @@ if [ -d "$HOME/adb-fastboot/platform-tools" ] ; then
 fi
 
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
 eval "$(starship init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
