@@ -60,6 +60,8 @@ if [ -d "$HOME/adb-fastboot/platform-tools" ] ; then
  export PATH="$HOME/adb-fastboot/platform-tools:$PATH"
 fi
 
+~/tools/cameractrls/cameractrls.py -d /dev/video2 -l -c power_line_frequency=50_hz > /dev/null
+
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
