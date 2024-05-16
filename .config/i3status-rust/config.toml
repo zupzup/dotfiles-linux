@@ -15,6 +15,10 @@ charging_format = "$icon $percentage"
 not_charging_format = "$icon $percentage"
 
 [[block]]
+block = "net"
+format = " $icon {$ssid} "
+
+[[block]]
 block = "sound"
 [[block.click]]
 button = "left"
