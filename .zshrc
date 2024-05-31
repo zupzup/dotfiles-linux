@@ -28,6 +28,7 @@ alias vi='nvim'
 alias is='cd ~/tools/infosec'
 alias wrt="cd ~/Tresors/mario\'s\ tresor/writing"
 alias ltxmk='latexmk -verbose -pdf -file-line-error -synctex=1 -interaction=nonstopmode'
+alias notes="cd ~/Tresors/mario\'s\ tresor/notes/md"
 
 export HISTSIZE=1000000
 export HISTFILESIZE=2000000
