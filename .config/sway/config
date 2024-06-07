@@ -45,8 +45,8 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 exec swayidle -w \
          timeout 600 'swaylock -f -c 000000' \
-         timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         timeout 3600 '$sleep_cmd' \
+         timeout 3600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         timeout 4200 '$sleep_cmd' \
          before-sleep 'swaylock -f -c 000000'
 
 for_window [app_id="firefox"] shortcuts_inhibitor disable
