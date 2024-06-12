@@ -18,6 +18,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'markonm/traces.vim'
 Plug 'lervag/vimtex'
+Plug 'cespare/vim-toml'
 
 call plug#end()
 
@@ -96,6 +97,9 @@ let g:go_list_type = "quickfix"
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
+
+let g:loaded_sql_completion = 0
+let g:omni_sql_no_default_maps = 1
 
 " BASIC EDITING CONFIGURATION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -203,8 +207,8 @@ nnoremap <leader>vv :grep! "\b<c-r><c-w>\b"<cr>:cw<cr><cr>
 
 nnoremap <leader>c :nohls<cr>
 
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap <leader>vf :Ag<SPACE>
+command -nargs=+ -complete=file -bar Rg silent! grep! <args>|cwindow|redraw!
+nnoremap <leader>vf :Rg<SPACE>
 
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
