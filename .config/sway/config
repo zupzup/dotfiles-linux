@@ -245,6 +245,8 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+no_focus [app_id="Helferlein"]
+
 assign [app_id="firefox"] workspace number 2
 assign [instance="signal"] workspace number 9
 assign [instance="spotify"] workspace number 8
