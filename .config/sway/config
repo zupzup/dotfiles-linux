@@ -62,7 +62,7 @@ for_window [instance="zoom"] inhibit_idle fullscreen
 for_window [instance="skype"] inhibit_idle fullscreen
 for_window [shell=".*"] inhibit_idle fullscreen
 
-for_window [app_id="Helferlein"] floating enable
+for_window [app_id="Helferlein"] floating enable, move right 600
 
 ### Input configuration
 #
