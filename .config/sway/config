@@ -251,6 +251,8 @@ no_focus [app_id="Helferlein"]
 
 assign [app_id="firefox"] workspace number 2
 assign [instance="signal"] workspace number 9
+assign [app_id=".*telegram.*"] workspace number 9
+assign [app_id=".*Telegram.*"] workspace number 9
 assign [instance="spotify"] workspace number 8
 assign [instance="tresorit"] workspace number 5
 assign [instance="notable"] workspace number 4
