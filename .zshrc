@@ -15,9 +15,7 @@ alias ct='bat'
 alias gows='cd ~/go/src/github.com/zupzup'
 alias rst='cd ~/dev/oss/rust/'
 alias tmlr='cd ~/dev/work/timeular'
-alias pflegenavi='cd ~/dev/work/pflegenavi'
-alias uni="cd ~/Tresors/mario\'s\ tresor/uni"
-alias phil="cd ~/Tresors/mario\'s\ tresor/uni/Philosophie"
+alias bitcr='cd ~/dev/work/bitcr'
 alias git='LANG=en_US git'
 alias tma='tmux attach -t'
 alias cr='cargo run'
