@@ -256,6 +256,7 @@ assign [app_id=".*Telegram.*"] workspace number 9
 assign [instance="spotify"] workspace number 8
 assign [instance="tresorit"] workspace number 5
 assign [instance="notable"] workspace number 4
+assign [instance="postman"] workspace number 6
 
 #
 # Status Bar:
