@@ -44,7 +44,7 @@ if executable('rg')
 endif
 set wildignore+=*/vendor,*/vendor/*,*.png,*.jpg,*.gif,build/*,node_modules/*,*.ttf,*/node_modules/*,*/build/*,*/target,*/target/*
 
-let NERDTreeIgnore=['node_modules', 'vendor', 'target', 'build']
+let NERDTreeIgnore=['node_modules', 'vendor', 'target', 'build/']
 
 function! s:check_back_space() abort
   let col = col('.') - 1
