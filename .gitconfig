@@ -1,8 +1,10 @@
 [push]
 	default = simple
+    autosetupRemote = true
 [user]
 	name = Mario Zupan
 	email = mario@zupzup.org 
+	signingkey = A6BD139FFB8978B3
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
@@ -11,10 +13,11 @@
 [core]
 	editor = vim
 [merge]
-	tool = diffmerge
-[mergetool "diffmerge"]
-	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
-    trustExitCode = true
+    tool = meld
+[difftool]
+	prompt = false
+[mergetool "meld"]
+    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
 [alias]
     st = status
     ci = commit
@@ -31,3 +34,5 @@
 	defaultBranch = main
 [pull]
 	rebase = false
+[commit]
+	gpgsign = true
