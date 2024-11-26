@@ -125,7 +125,7 @@ set hlsearch
 " perf stuff
 :set lazyredraw
 :set ttyfast
-:set synmaxcol=128
+:set synmaxcol=500
 :set re=1
 " make searches case-sensitive only if they contain upper-case characters
 set ignorecase smartcase
