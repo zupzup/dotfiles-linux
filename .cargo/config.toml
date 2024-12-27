@@ -1,6 +1,6 @@
 [target.x86_64-unknown-linux-gnu]
 linker = "clang"
-rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/mold"]
+rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
 
 [build]
-rustc-wrapper = "/home/zupzup/.cargo/bin/sccache"
+rustc-wrapper = "/home/mario/.cargo/bin/sccache"

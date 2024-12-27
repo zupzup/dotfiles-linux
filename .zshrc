@@ -24,7 +24,7 @@ alias vi='nvim'
 alias is='cd ~/tools/infosec'
 alias wrt="cd ~/Tresors/mario\'s\ tresor/writing"
 alias ltxmk='latexmk -verbose -pdf -file-line-error -synctex=1 -interaction=nonstopmode'
-alias notes="cd ~/Tresors/mario\'s\ tresor/notes/md"
+alias notes="cd ~/Tresorit/mario\'s\ tresor/notes/md"
 
 export HISTSIZE=1000000
 export HISTFILESIZE=2000000
@@ -45,15 +45,15 @@ export ACK_COLOR_MATCH='red'
 export PATH="/usr/local/bin:$PATH"
 export PATH=$HOME/.local/bin:$PATH
 
-export PATH=$PATH:/home/zupzup/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin:/home/zupzup/go/bin:/home/zupzup/.local/bin:/home/zupzup/tools/ideac/bin
+export PATH=$PATH:/home/mario/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin:/home/mario/go/bin:/home/mario/.local/bin:/home/mario/tools/ideac/bin
 export PATH="$PATH:/opt/nvim-linux64/bin"
-export PATH=/home/zupzup/.surrealdb:$PATH
+export PATH=/home/mario/.surrealdb:$PATH
 export LC_CTYPE="en_US.UTF-8"
 
 export PATH="$HOME/.cargo/bin:$PATH"
-export GOPATH=/home/zupzup/go
+export GOPATH=/home/mario/go
 
-~/tools/cameractrls/cameractrls.py -d /dev/video2 -l -c power_line_frequency=50_hz > /dev/null
+#~/tools/cameractrls/cameractrls.py -d /dev/video3 -l -c power_line_frequency=50_hz > /dev/null
 
 
 export FZF_DEFAULT_COMMAND='rg -g ""'
@@ -61,3 +61,7 @@ export FZF_DEFAULT_COMMAND='rg -g ""'
 eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

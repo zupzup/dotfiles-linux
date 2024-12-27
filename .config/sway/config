@@ -3,13 +3,17 @@
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
-exec_always /home/zupzup/tools/lid.sh
+exec_always /home/mario/tools/lid.sh
 exec_always /usr/local/bin/wl-clipboard-history -t
 exec_always wl-paste --watch cliphist store
-exec_always /usr/bin/gammastep
+exec_always /usr/local/bin/wlsunset -l 48.210 -L 16.363449
+exec_always {
+    gsettings set org.gnome.desktop.interface text-scaling-factor 0.8
+    gsettings set org.gnome.desktop.interface cursor-size 16 
+}
 exec way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1
 
-exec /home/zupzup/tools/xdgstuff.sh
+exec /home/mario/tools/xdgstuff.sh
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -25,7 +29,7 @@ set $sleep_cmd systemctl suspend
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu dmenu_path | bemenu -p "" | xargs swaymsg exec --
 
 include /etc/sway/config-vars.d/*
 
@@ -250,7 +254,7 @@ bindsym $mod+r mode "resize"
 no_focus [app_id="Helferlein"]
 
 assign [app_id="firefox"] workspace number 2
-assign [instance="signal"] workspace number 9
+assign [app_id="signal"] workspace number 9
 assign [app_id=".*telegram.*"] workspace number 9
 assign [app_id=".*Telegram.*"] workspace number 9
 assign [instance="spotify"] workspace number 8
@@ -263,9 +267,9 @@ assign [instance="postman"] workspace number 6
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    font pango:DejaVu Sans Mono, FontAwesome 11
+    font pango:DejaVu Sans Mono, FontAwesome 7
     position top
-    status_command /home/zupzup/.cargo/bin/i3status-rs /home/zupzup/.config/i3status-rust/config.toml
+    status_command /home/mario/.cargo/bin/i3status-rs /home/mario/.config/i3status-rust/config.toml
     colors {
         separator #666666
         background #222222
@@ -276,37 +280,5 @@ bar {
         urgent_workspace #2f343a #900000 #ffffff
     }
 }
-
-# bar {
-#     swaybar_command swaybar
-#     # Use swayrbar as status command with some logging output which
-#     # is redirected to /tmp/swayrbar.log.  Be sure to only redirect
-#     # stderr because the swaybar protocol requires the status_command
-#     # to emit JSON to stdout which swaybar reads.
-#     status_command ~/tools/bar 
-#     position top
-#     # font pango:Iosevka 11
-#     height 20
-
-#     colors {
-#         statusline #32323200
-#         background #323232
-#         # inactive_workspace #32323200 #32323200 #5c5c5c
-#     }
-# }
-
-# bar {
-#     position top
-
-#     # When the status_command prints a new line to stdout, swaybar updates.
-#     # The default just shows the current date and time.
-#     status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-
-#     colors {
-#         statusline #ffffff
-#         background #323232
-#         inactive_workspace #32323200 #32323200 #5c5c5c
-#     }
-# }
 
 include /etc/sway/config.d/*
