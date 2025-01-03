@@ -16,7 +16,7 @@ foreground = "0xe5e5e5"
 TERM = "xterm-256color"
 
 [font]
-size = 10.0
+size = 12.0
 
 [font.normal]
 family = "monospace"
