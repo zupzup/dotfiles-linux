@@ -33,9 +33,7 @@ AUTO_SCALE_MIN: 1.0
 
 # Auto scale may be overridden for each display.
 SCALE:
-  - NAME_DESC: HDMI-A-1
-    SCALE: 1.00
-  - NAME_DESC: DP-8
+  - NAME_DESC: 'BNQ BenQ GL2706PQ L1K00753SL0'
     SCALE: 1.00
   - NAME_DESC: eDP-1
     SCALE: 2.00
