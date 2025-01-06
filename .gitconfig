@@ -11,7 +11,7 @@
 [color]
 	ui = auto
 [core]
-	editor = vim
+	editor = nvim
 [merge]
     tool = meld
 [difftool]
