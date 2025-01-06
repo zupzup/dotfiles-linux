@@ -4,7 +4,7 @@
     "rust-analyzer.imports.group.enable": false,
     "rust-analyzer.completion.postfix.enable": false,
     "rust-analyzer.updates.channel": "stable",
-    "rust-analyzer.inlayHints.chainingHints": false,
+    "rust-analyzer.inlayHints.chainingHints.enable": false,
     "rust-analyzer.cargo.features": "all",
     "rust-analyzer.checkOnSave.overrideCommand": ["cargo", "clippy", "--workspace", "--message-format=json", "--all-targets", "--all-features"],
 }
