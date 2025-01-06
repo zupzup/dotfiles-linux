@@ -19,6 +19,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'markonm/traces.vim'
 Plug 'lervag/vimtex'
 Plug 'cespare/vim-toml'
+Plug 'humbertocarmona/kanagawa-mod.nvim'
+Plug 'srcery-colors/srcery-vim'
 
 call plug#end()
 
@@ -192,7 +194,11 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :set t_Co=256 
 :set background=dark
-colorscheme nazca
+:let g:srcery_black = '#111111'
+:let g:srcery_blue= '#2BE4D0'
+" colorscheme nazca
+" colorscheme kanagawa
+colorscheme srcery
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
