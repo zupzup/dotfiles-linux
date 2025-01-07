@@ -7,11 +7,6 @@ exec_always /home/mario/tools/lid.sh
 exec_always /usr/local/bin/wl-clipboard-history -t
 exec_always wl-paste --watch cliphist store
 exec_always /usr/local/bin/wlsunset -l 48.210 -L 16.363449
-# For hidpi hack
-# exec_always {
-#     gsettings set org.gnome.desktop.interface text-scaling-factor 0.8
-#     gsettings set org.gnome.desktop.interface cursor-size 16 
-# }
 exec way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1
 
 exec /home/mario/tools/xdgstuff.sh
