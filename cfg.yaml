@@ -44,6 +44,10 @@ SCALE:
 # WARNING: this may result in an unusable display. See https://github.com/alex-courtis/way-displays#known-issues-with-workarounds
 # for a possible workaround.
 MODE:
+  - NAME_DESC: 'Microstep MSI MD272QXP PB1H854900020'
+    WIDTH: 2560
+    HEIGHT: 1440
+    HZ: 100
     # Resolution and refresh
     #- NAME_DESC: HDMI-A-1
     #  WIDTH: 1920
