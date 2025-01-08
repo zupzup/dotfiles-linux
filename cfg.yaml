@@ -34,11 +34,13 @@ AUTO_SCALE_MIN: 1.0
 # Auto scale may be overridden for each display.
 SCALE:
   - NAME_DESC: 'BNQ BenQ GL2706PQ L1K00753SL0'
-    SCALE: 1.25
+    SCALE: 1.00
   - NAME_DESC: 'Microstep MSI MD272QXP PB1H854900020'
     SCALE: 1.25
   - NAME_DESC: eDP-1
     SCALE: 2.00
+  - NAME_DESC: 'Acer Technologies XB253Q TH5EE0088522'
+    SCALE: 1.00
 
 # Override the preferred mode.
 # WARNING: this may result in an unusable display. See https://github.com/alex-courtis/way-displays#known-issues-with-workarounds
@@ -48,6 +50,10 @@ MODE:
     WIDTH: 2560
     HEIGHT: 1440
     HZ: 100
+  - NAME_DESC: 'Acer Technologies XB253Q TH5EE0088522'
+    WIDTH: 1920
+    HEIGHT: 1080
+    HZ: 120
     # Resolution and refresh
     #- NAME_DESC: HDMI-A-1
     #  WIDTH: 1920
