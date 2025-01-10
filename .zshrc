@@ -53,7 +53,7 @@ export LC_CTYPE="en_US.UTF-8"
 export PATH="$HOME/.cargo/bin:$PATH"
 export GOPATH=/home/mario/go
 
-#~/tools/cameractrls/cameractrls.py -d /dev/video3 -l -c power_line_frequency=50_hz > /dev/null
+~/tools/cameractrls/cameractrls.py -d /dev/video4 -l -c power_line_frequency=50_hz > /dev/null
 
 
 export FZF_DEFAULT_COMMAND='rg -g ""'
