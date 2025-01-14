@@ -66,7 +66,7 @@ for_window [app_id="Helferlein"] floating enable, move right 600
 
 input "5426:152:Razer_Razer_DeathAdder_Essential" {
     accel_profile "flat"
-    pointer_accel 0.6
+    pointer_accel 0.5
 }
 
 ### Input configuration
