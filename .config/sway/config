@@ -64,6 +64,11 @@ for_window [shell=".*"] inhibit_idle fullscreen
 
 for_window [app_id="Helferlein"] floating enable, move right 600
 
+input "5426:152:Razer_Razer_DeathAdder_Essential" {
+    accel_profile "flat"
+    pointer_accel 0.6
+}
+
 ### Input configuration
 #
 # Example configuration:
