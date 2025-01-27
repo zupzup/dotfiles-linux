@@ -41,6 +41,8 @@ SCALE:
     SCALE: 2.00
   - NAME_DESC: 'Acer Technologies XB253Q TH5EE0088522'
     SCALE: 1.00
+  - NAME_DESC: 'ASUSTek COMPUTER INC PA27JCV S9LMSB002703'
+    SCALE: 2.00
 
 # Override the preferred mode.
 # WARNING: this may result in an unusable display. See https://github.com/alex-courtis/way-displays#known-issues-with-workarounds
@@ -54,6 +56,10 @@ MODE:
     WIDTH: 1920
     HEIGHT: 1080
     HZ: 120
+  - NAME_DESC: 'ASUSTek COMPUTER INC PA27JCV S9LMSB002703'
+    WIDTH: 4096
+    HEIGHT: 2160
+    HZ: 60
     # Resolution and refresh
     #- NAME_DESC: HDMI-A-1
     #  WIDTH: 1920
