@@ -57,9 +57,11 @@ MODE:
     HEIGHT: 1080
     HZ: 120
   - NAME_DESC: 'ASUSTek COMPUTER INC PA27JCV S9LMSB002703'
-    WIDTH: 4096
-    HEIGHT: 2160
+    WIDTH: 5120
+    HEIGHT: 2880
     HZ: 60
+    # WIDTH: 4096
+    # HEIGHT: 2160
     # Resolution and refresh
     #- NAME_DESC: HDMI-A-1
     #  WIDTH: 1920
