@@ -250,7 +250,7 @@ require('lazy').setup({
                     vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts)
                     vim.api.nvim_set_keymap('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
                     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-                    vim.keymap.set('n', '<leader>f', function()
+                    vim.keymap.set('n', '<leader>;', function()
                         vim.lsp.buf.format { async = true }
                     end, opts)
 
@@ -332,6 +332,7 @@ vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', { noremap = true, silent = t
 vim.keymap.set('n', '<leader>n', ':bn<cr>')
 vim.keymap.set('n', '<leader>N', ':bp<cr>')
 vim.keymap.set('n', '<leader>f', '<cmd>Files<cr>')
+vim.keymap.set('n', '<c-p>', '<cmd>Files<cr>')
 vim.keymap.set('i', '<c-c>', '<esc>')
 vim.keymap.set('n', '<leader>s', ':vsplit<cr>')
 vim.keymap.set('n', '<leader>c', ':nohls<cr>')
