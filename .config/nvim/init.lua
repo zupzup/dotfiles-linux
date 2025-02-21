@@ -186,11 +186,15 @@ require('lazy').setup({
                 settings = {
                     ["rust-analyzer"] = {
                         cargo = {
+                            loadOutDirsFromCheck = true,
                             allFeatures = true,
+                        },
+                        procMacro = {
+                            enable = true,
                         },
                         imports = {
                             group = {
-                                enable = false,
+                                enable = true,
                             },
                         },
                         completion = {
@@ -368,7 +372,11 @@ vim.api.nvim_set_keymap('v', '<leader>vb', '"zy:Telescope grep_string default_te
 vim.api.nvim_set_keymap('n', '<leader>vv', ':Telescope grep_string<CR>', { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>ust', ':set softtabstop=2 <bar> :set shiftwidth=2 <bar> :set tabstop=2<cr>')
-vim.keymap.set('n', '<leader>et', ':set expandtab!')
+
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 -- General Settings
 vim.opt.number = true
