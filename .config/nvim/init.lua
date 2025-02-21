@@ -4,6 +4,23 @@ vim.api.nvim_create_autocmd('BufRead', { pattern = '*.orig', command = 'set read
 vim.api.nvim_create_autocmd('BufRead', { pattern = '*.pacnew', command = 'set readonly' })
 vim.api.nvim_create_autocmd('InsertLeave', { pattern = '*', command = 'set nopaste' })
 
+
+function ToggleQuickfix()
+    local is_open = false
+    for _, win in ipairs(vim.api.nvim_list_wins()) do
+        if vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(win), "buftype") == "quickfix" then
+            vim.cmd("cclose")
+            is_open = true
+            break
+        end
+    end
+    if not is_open then
+        vim.cmd("copen")
+    end
+end
+
+vim.api.nvim_set_keymap("n", "<leader>q", ":lua ToggleQuickfix()<CR>", { noremap = true, silent = true })
+
 vim.api.nvim_create_autocmd(
 'BufReadPost',
 {
@@ -180,6 +197,9 @@ require('lazy').setup({
                             postfix = {
                                 enable = false,
                             },
+                        },
+                        diagnostics = {
+                            disabled = { "unresolved-proc-macro" }, -- Avoid slow diagnostics on macros
                         },
                     },
                 },
