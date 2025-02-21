@@ -20,7 +20,6 @@ Plug 'markonm/traces.vim'
 Plug 'lervag/vimtex'
 Plug 'cespare/vim-toml'
 Plug 'humbertocarmona/kanagawa-mod.nvim'
-Plug 'srcery-colors/srcery-vim'
 
 call plug#end()
 

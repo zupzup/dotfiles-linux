@@ -1,14 +1,5 @@
 vim.g.mapleader = ","
 
-
-vim.api.nvim_create_autocmd(
-'TextYankPost',
-{
-    pattern = '*',
-    command = 'silent! lua vim.highlight.on_yank({ timeout = 500 })'
-}
-)
-
 vim.api.nvim_create_autocmd('BufRead', { pattern = '*.orig', command = 'set readonly' })
 vim.api.nvim_create_autocmd('BufRead', { pattern = '*.pacnew', command = 'set readonly' })
 vim.api.nvim_create_autocmd('InsertLeave', { pattern = '*', command = 'set nopaste' })
@@ -43,7 +34,10 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
     {'kien/ctrlp.vim'},
     {'preservim/nerdtree'},
-
+    {
+        'nvim-telescope/telescope.nvim',
+        dependencies = { 'nvim-lua/plenary.nvim' }
+    },
     {'jelera/vim-javascript-syntax'},
     {'pangloss/vim-javascript'},
     {'mxw/vim-jsx'},
@@ -149,12 +143,29 @@ require('lazy').setup({
     {
         'neovim/nvim-lspconfig',
         config = function()
-            -- Setup language servers.
             local lspconfig = require('lspconfig')
 
-            -- Rust
+            lspconfig.ts_ls.setup {}
+
+            lspconfig.gopls.setup({
+                cmd = { "gopls" },
+                filetypes = { "go", "gomod", "gowork", "gotmpl" },
+                root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
+                settings = {
+                    gopls = {
+                        completeUnimported = true,
+                        usePlaceholders = true,
+                        analyses = {
+                            unusedparams = true,
+                            shadow = true,
+                        },
+                        staticcheck = true,
+                        gofumpt = true,
+                    },
+                },
+            })
+
             lspconfig.rust_analyzer.setup {
-                -- Server-specific settings. See `:help lspconfig-setup`
                 settings = {
                     ["rust-analyzer"] = {
                         cargo = {
@@ -174,7 +185,6 @@ require('lazy').setup({
                 },
             }
 
-            -- Bash LSP
             local configs = require 'lspconfig.configs'
             if not configs.bash_lsp and vim.fn.executable('bash-language-server') == 1 then
                 configs.bash_lsp = {
@@ -307,30 +317,6 @@ require('lazy').setup({
     },
 })
 
--- LSP Configuration
-local lspconfig = require('lspconfig')
-local cmp = require('cmp')
-
-cmp.setup {
-    snippet = {
-        expand = function(args)
-            require('luasnip').lsp_expand(args.body)
-        end,
-    },
-    mapping = {
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    },
-    sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'buffer' },
-        { name = 'path' }
-    })
-}
-
--- Enable LSP servers
-lspconfig.ts_ls.setup {}
-lspconfig.gopls.setup {}
 
 vim.keymap.set('n', '<up>', '<nop>')
 vim.keymap.set('n', '<down>', '<nop>')
@@ -342,10 +328,26 @@ vim.keymap.set('n', '<left>', '<nop>')
 vim.keymap.set('n', '<right>', '<nop>')
 
 vim.keymap.set('n', '<leader><leader>', '<c-^>')
-vim.keymap.set('n', '<leader>w', 'w :w<cr>')
+vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>n', ':bn<cr>')
 vim.keymap.set('n', '<leader>N', ':bp<cr>')
 vim.keymap.set('n', '<leader>f', '<cmd>Files<cr>')
+vim.keymap.set('i', '<c-c>', '<esc>')
+vim.keymap.set('n', '<leader>s', ':vsplit<cr>')
+vim.keymap.set('n', '<leader>c', ':nohls<cr>')
+vim.keymap.set('n', '<leader>y', '"*y')
+
+vim.keymap.set('n', '<c-j>', '<c-w>j')
+vim.keymap.set('n', '<c-k>', '<c-w>k')
+vim.keymap.set('n', '<c-h>', '<c-w>h')
+vim.keymap.set('n', '<c-l>', '<c-w>l')
+
+vim.api.nvim_set_keymap('n', '<leader>vf', ':Telescope live_grep<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>vb', '"zy:Telescope grep_string default_text=<C-r>z<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>vv', ':Telescope grep_string<CR>', { noremap = true, silent = true })
+
+vim.keymap.set('n', '<leader>ust', ':set softtabstop=2 <bar> :set shiftwidth=2 <bar> :set tabstop=2<cr>')
+vim.keymap.set('n', '<leader>et', ':set expandtab!')
 
 -- General Settings
 vim.opt.number = true
@@ -377,8 +379,11 @@ vim.opt.splitbelow = true
 vim.opt.undofile = true
 vim.opt.wildmode = 'list:longest'
 vim.opt.wildignore = '.hg,.svn,*~,*.png,*.jpg,*.gif,*.min.js,*.swp,*.o,vendor,dist,_site,target,*/target/*,*target,build'
+vim.opt.guicursor = "n-v-c:block"
+vim.opt.guicursor = "i:block-blinkon1"
 
 vim.cmd('colorscheme kanagawa')
+-- vim.cmd('colorscheme nazca')
 
 -- NerdTree Keymaps
 vim.api.nvim_set_keymap('n', '<leader>t', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
