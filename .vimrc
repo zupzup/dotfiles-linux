@@ -98,7 +98,6 @@ let g:go_auto_sameids=0
 let g:go_list_type = "quickfix"
 
 let g:rustfmt_autosave = 1
-let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
 
 let g:loaded_sql_completion = 0
@@ -194,11 +193,13 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :set t_Co=256 
 :set background=dark
-:let g:srcery_black = '#111111'
-:let g:srcery_blue= '#2BE4D0'
-" colorscheme nazca
+" :let g:srcery_black = '#111111'
+" :let g:srcery_blue= '#2BE4D0'
+" :let g:srcery_bright_white= '#EEEEEE'
+" :let g:srcery_white= '#EEEEEE'
+colorscheme nazca
 " colorscheme kanagawa
-colorscheme srcery
+" colorscheme srcery
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
