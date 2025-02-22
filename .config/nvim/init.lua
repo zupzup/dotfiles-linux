@@ -306,6 +306,7 @@ require('lazy').setup({
         config = function()
             local cmp = require'cmp'
             cmp.setup({
+                preselect = cmp.PreselectMode.None,
                 snippet = {
                     expand = function(args)
                         vim.fn["vsnip#anonymous"](args.body)
@@ -316,7 +317,7 @@ require('lazy').setup({
                     ['<C-f>'] = cmp.mapping.scroll_docs(4),
                     ["<Tab>"] = cmp.mapping(function(fallback)
                         if cmp.visible() then
-                            cmp.select_next_item()
+                            cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
                         else
                             fallback()
                         end
@@ -325,21 +326,18 @@ require('lazy').setup({
                         if cmp.visible() then
                             cmp.select_prev_item()
                         else
-                            fallback()
+                            vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-d>", true, false, true), "n", true)
                         end
                     end, { "i", "s" }),
                     ['<C-Space>'] = cmp.mapping.complete(),
                     ['<C-e>'] = cmp.mapping.abort(),
-                    ['<Enter>'] = cmp.mapping.confirm({ select = true }),
+                    ["<CR>"] = cmp.mapping.confirm({ select = true }),
                 }),
                 sources = cmp.config.sources({
-                    { name = 'nvim_lsp' },
-                }, {
+                    { name = 'nvim_lsp' }, 
+                    { name = 'buffer' },
                     { name = 'path' },
                 }),
-                experimental = {
-                    ghost_text = true,
-                },
             })
 
             cmp.setup.cmdline(':', {
