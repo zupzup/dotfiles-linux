@@ -133,7 +133,17 @@ require('lazy').setup({
         end
     },
     {'milkypostman/vim-togglelist'},
-    {'humbertocarmona/kanagawa-mod.nvim'},
+    {'humbertocarmona/kanagawa-mod.nvim',
+        config = function()
+            vim.cmd("colorscheme kanagawa") -- Use "kanagawa-wave" or "kanagawa-lotus" if preferred
+
+            vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#54546D", bg = "None" }) -- Change color if needed
+
+            vim.defer_fn(function()
+                vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#7E9CD8", bg = "None" })
+            end, 50)
+        end,
+    },
     {
         'junegunn/fzf.vim',
         dependencies = {
