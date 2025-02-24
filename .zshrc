@@ -18,6 +18,7 @@ alias bitcr='cd ~/dev/work/bitcr'
 alias git='LANG=en_US git'
 alias cr='cargo run'
 alias cck='cargo check --all-targets'
+alias ckc='cargo check --all-targets'
 alias clp='cargo clippy --all-targets'
 alias vim='nvim'
 alias vi='nvim'
@@ -60,8 +61,9 @@ export FZF_DEFAULT_COMMAND='rg -g ""'
 
 eval "$(starship init zsh)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
