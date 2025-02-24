@@ -19,7 +19,7 @@ function ToggleQuickfix()
     end
 end
 
-vim.api.nvim_set_keymap("n", "<leader>q", ":lua ToggleQuickfix()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>Q", ":lua ToggleQuickfix()<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_create_autocmd(
 'BufReadPost',
@@ -263,6 +263,7 @@ require('lazy').setup({
             vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
             vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
             vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+            vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
             -- Use LspAttach autocommand to only map the following keys
             -- after the language server attaches to the current buffer
@@ -383,6 +384,7 @@ vim.keymap.set('n', '<leader>ust', ':set softtabstop=2 <bar> :set shiftwidth=2 <
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 -- General Settings
 vim.opt.number = true
