@@ -5,7 +5,7 @@
 # Read `man 5 sway` for a complete reference.
 exec_always /home/mario/tools/lid.sh
 exec_always /usr/local/bin/wl-clipboard-history -t
-exec_always wl-paste --watch cliphist store
+exec_always wl-paste --watch cliphist store -max-items 2500
 exec_always /usr/local/bin/wlsunset -l 48.210 -L 16.363449
 exec way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1
 
