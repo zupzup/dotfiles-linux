@@ -116,12 +116,16 @@ input "type:keyboard" {
     bindsym $mod+Shift+r reload
     bindsym $mod+Shift+c exec wlclipdmenu
 
-set $screenshot 1 selected, 2 whole, 3 selected clipboard, 4 whole clipboard, 5 hex color
+# set $screenshot 1 selected, 2 whole, 3 selected clipboard, 4 whole clipboard
+set $screenshot 1 selected, 2 screen, 3 window
 mode "$screenshot" {
-        bindsym 1 exec 'wayshot -s "$(slurp)" -f ~/Pictures/screenshots/ps_$(date +"%Y%m%d%H%M%S").png', mode "default"
-        bindsym 2 exec 'wayshot -f ~/Pictures/screenshots/ps_$(date +"%Y%m%d%H%M%S").png', mode "default"
-        bindsym 3 exec 'wayshot -s "$(slurp)" --stdout | wl-copy', mode "default"
-        bindsym 4 exec 'wayshot --stdout | wl-copy', mode "default"
+        bindsym 1 exec 'shotman --capture region', mode "default"
+        bindsym 2 exec 'shotman --capture output', mode "default"
+        bindsym 3 exec 'shotman --capture window', mode "default"
+#         bindsym 1 exec 'wayshot -s "$(slurp)" -f ~/Pictures/screenshots/ps_$(date +"%Y%m%d%H%M%S").png', mode "default"
+#         bindsym 2 exec 'wayshot -f ~/Pictures/screenshots/ps_$(date +"%Y%m%d%H%M%S").png', mode "default"
+#         bindsym 3 exec 'wayshot -s "$(slurp)" --stdout | wl-copy', mode "default"
+#         bindsym 4 exec 'wayshot --stdout | wl-copy', mode "default"
 
 # back to normal: Enter or Escape
         bindsym Return mode "default"
