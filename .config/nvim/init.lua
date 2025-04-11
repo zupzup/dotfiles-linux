@@ -3,6 +3,12 @@ vim.g.mapleader = ","
 vim.api.nvim_create_autocmd('BufRead', { pattern = '*.orig', command = 'set readonly' })
 vim.api.nvim_create_autocmd('BufRead', { pattern = '*.pacnew', command = 'set readonly' })
 vim.api.nvim_create_autocmd('InsertLeave', { pattern = '*', command = 'set nopaste' })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+  end,
+})
 
 
 function ToggleQuickfix()
