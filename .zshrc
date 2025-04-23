@@ -22,8 +22,6 @@ alias ckc='cargo check --all-targets'
 alias clp='cargo clippy --all-targets'
 alias vim='nvim'
 alias vi='nvim'
-alias is='cd ~/tools/infosec'
-alias wrt="cd ~/Tresors/mario\'s\ tresor/writing"
 alias ltxmk='latexmk -verbose -pdf -file-line-error -synctex=1 -interaction=nonstopmode'
 alias notes="cd ~/Tresorit/mario\'s\ tresor/notes/md"
 
@@ -55,7 +53,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export GOPATH=/home/mario/go
 
 ~/tools/cameractrls/cameractrls.py -d /dev/video5 -l -c power_line_frequency=50_hz > /dev/null 2> /dev/null
-
 
 export FZF_DEFAULT_COMMAND='rg -g ""'
 
