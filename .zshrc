@@ -21,6 +21,7 @@ alias cck='cargo check --all-targets'
 alias ckc='cargo check --all-targets'
 alias clp='cargo clippy --all-targets'
 alias vim='nvim'
+alias ivm='nvim'
 alias vi='nvim'
 alias ltxmk='latexmk -verbose -pdf -file-line-error -synctex=1 -interaction=nonstopmode'
 alias notes="cd ~/Tresorit/mario\'s\ tresor/notes/md"
