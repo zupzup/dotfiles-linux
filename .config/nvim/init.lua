@@ -214,9 +214,6 @@ require('lazy').setup({
                                 enable = true,
                             },
                         },
-                        check = {
-                            command = "clippy",
-                        },
                         completion = {
                             postfix = {
                                 enable = false,
