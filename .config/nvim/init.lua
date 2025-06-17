@@ -204,6 +204,7 @@ require('lazy').setup({
                         cargo = {
                             loadOutDirsFromCheck = true,
                             allFeatures = true,
+                            targetDir = true,
                         },
                         procMacro = {
                             enable = true,
@@ -212,6 +213,9 @@ require('lazy').setup({
                             group = {
                                 enable = true,
                             },
+                        },
+                        check = {
+                            command = "clippy",
                         },
                         completion = {
                             postfix = {
