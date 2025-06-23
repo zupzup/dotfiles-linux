@@ -25,6 +25,7 @@ alias ivm='nvim'
 alias vi='nvim'
 alias ltxmk='latexmk -verbose -pdf -file-line-error -synctex=1 -interaction=nonstopmode'
 alias notes="cd ~/Tresorit/mario\'s\ tresor/notes/md"
+alias orange='vmd'
 
 export HISTSIZE=1000000
 export HISTFILESIZE=2000000
