@@ -54,12 +54,11 @@ export LC_CTYPE="en_US.UTF-8"
 export PATH="$HOME/.cargo/bin:$PATH"
 export GOPATH=/home/mario/go
 
-~/tools/cameractrls/cameractrls.py -d /dev/video5 -l -c power_line_frequency=50_hz > /dev/null 2> /dev/null
+# ~/tools/cameractrls/cameractrls.py -d /dev/video5 -l -c power_line_frequency=50_hz > /dev/null 2> /dev/null
 
 export FZF_DEFAULT_COMMAND='rg -g ""'
 
 eval "$(starship init zsh)"
-
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
