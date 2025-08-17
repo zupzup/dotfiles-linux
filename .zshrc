@@ -47,7 +47,7 @@ export PATH="/usr/local/bin:$PATH"
 export PATH=$HOME/.local/bin:$PATH
 
 export PATH=$PATH:/home/mario/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin:/home/mario/go/bin:/home/mario/.local/bin:/home/mario/tools/ideac/bin
-export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH=/home/mario/.surrealdb:$PATH
 export LC_CTYPE="en_US.UTF-8"
 
