@@ -55,11 +55,11 @@ exec swayidle -w \
 for_window [app_id="firefox"] shortcuts_inhibitor disable
 for_window [class="Google-chrome"] shortcuts_inhibitor disable
 for_window [instance="zoom"] shortcuts_inhibitor disable
-for_window [instance="skype"] shortcuts_inhibitor disable
+for_window [instance="freetube"] shortcuts_inhibitor disable
 for_window [app_id="firefox"] inhibit_idle fullscreen
 for_window [class="Google-chrome"] inhibit_idle fullscreen
 for_window [instance="zoom"] inhibit_idle fullscreen
-for_window [instance="skype"] inhibit_idle fullscreen
+for_window [instance="freetube"] inhibit_idle fullscreen
 for_window [shell=".*"] inhibit_idle fullscreen
 
 for_window [app_id="Helferlein"] floating enable, move right 600
@@ -266,6 +266,7 @@ assign [app_id="signal"] workspace number 9
 assign [app_id=".*telegram.*"] workspace number 9
 assign [app_id=".*Telegram.*"] workspace number 9
 assign [instance="spotify"] workspace number 8
+assign [instance="freetube"] workspace number 6
 assign [instance="tresorit"] workspace number 5
 assign [instance="notable"] workspace number 4
 assign [instance="postman"] workspace number 6
