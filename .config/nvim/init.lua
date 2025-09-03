@@ -382,6 +382,7 @@ vim.keymap.set('n', '<c-h>', '<c-w>h')
 vim.keymap.set('n', '<c-l>', '<c-w>l')
 
 vim.api.nvim_set_keymap('n', '<leader>vf', ':Telescope live_grep<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>vr', ':Telescope resume<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<leader>vb', '"zy:Telescope grep_string default_text=<C-r>z<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>vv', ':Telescope grep_string<CR>', { noremap = true, silent = true })
 
