@@ -176,14 +176,13 @@ require('lazy').setup({
     {
         'neovim/nvim-lspconfig',
         config = function()
-            local lspconfig = require('lspconfig')
+            vim.lsp.config('ts_ls',  {})
+            vim.lsp.enable('ts_ls')
 
-            lspconfig.ts_ls.setup {}
-
-            lspconfig.gopls.setup({
+            vim.lsp.config('gopls',  {
                 cmd = { "gopls" },
                 filetypes = { "go", "gomod", "gowork", "gotmpl" },
-                root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
+                root_markers = { 'go.work', 'go.mod', '.git' },
                 settings = {
                     gopls = {
                         completeUnimported = true,
@@ -197,8 +196,9 @@ require('lazy').setup({
                     },
                 },
             })
+            vim.lsp.enable('gopls')
 
-            lspconfig.rust_analyzer.setup {
+            vim.lsp.config('rust_analyzer', {
                 settings = {
                     ["rust-analyzer"] = {
                         cargo = {
@@ -224,45 +224,11 @@ require('lazy').setup({
                         },
                     },
                 },
-            }
+            })
+            vim.lsp.enable('rust_analyzer')
 
-            local configs = require 'lspconfig.configs'
-            if not configs.bash_lsp and vim.fn.executable('bash-language-server') == 1 then
-                configs.bash_lsp = {
-                    default_config = {
-                        cmd = { 'bash-language-server', 'start' },
-                        filetypes = { 'sh' },
-                        root_dir = require('lspconfig').util.find_git_ancestor,
-                        init_options = {
-                            settings = {
-                                args = {}
-                            }
-                        }
-                    }
-                }
-            end
-            if configs.bash_lsp then
-                lspconfig.bash_lsp.setup {}
-            end
-
-            -- Ruff for Python
-            local configs = require 'lspconfig.configs'
-            if not configs.ruff_lsp and vim.fn.executable('ruff-lsp') == 1 then
-                configs.ruff_lsp = {
-                    default_config = {
-                        cmd = { 'ruff-lsp' },
-                        filetypes = { 'python' },
-                        root_dir = require('lspconfig').util.find_git_ancestor,
-                        init_options = {
-                            settings = {
-                                args = {}
-                            }
-                        }
-                    }
-                }
-            end
-            if configs.ruff_lsp then
-                lspconfig.ruff_lsp.setup {}
+            if vim.fn.executable('bash-language-server') == 1 then
+                vim.lsp.enable('bashls')
             end
 
             -- Global mappings.
