@@ -3,3 +3,6 @@ rustflags = ["-C", "link-arg=-fuse-ld=mold"]
 
 [build]
 rustc-wrapper = "/home/mario/.cargo/bin/sccache"
+
+[net]
+git-fetch-with-cli = true

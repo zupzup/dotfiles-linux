@@ -36,3 +36,5 @@
 	rebase = false
 [commit]
 	gpgsign = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
