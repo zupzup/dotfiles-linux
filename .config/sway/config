@@ -91,6 +91,10 @@ input "type:keyboard" {
     xkb_variant altgr-intl
 }
 
+input "2362:597:UNIW0001:00_093A:0255_Touchpad" {
+    middle_emulation enabled no
+}
+
 ### Key bindings
 #
 # Basics:
