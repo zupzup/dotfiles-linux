@@ -54,6 +54,8 @@ export LC_CTYPE="en_US.UTF-8"
 export PATH="$HOME/.cargo/bin:$PATH"
 export GOPATH=/home/mario/go
 
+export JAVA_HOME=/usr/lib/jvm/java-1.17.0-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
 export ANDROID_NDK_HOME=/home/mario/tools/android-ndk-r29
 export ANDROID_HOME=/home/mario/Android/Sdk
 export ANDROID_SDK_ROOT=/home/mario/Android/Sdk
