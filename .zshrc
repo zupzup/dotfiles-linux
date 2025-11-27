@@ -55,6 +55,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export GOPATH=/home/mario/go
 
 export ANDROID_NDK_HOME=/home/mario/tools/android-ndk-r29
+export ANDROID_HOME=/home/mario/Android/Sdk
+export ANDROID_SDK_ROOT=/home/mario/Android/Sdk
+export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH"
 
 # ~/tools/cameractrls/cameractrls.py -d /dev/video5 -l -c power_line_frequency=50_hz > /dev/null 2> /dev/null
 
