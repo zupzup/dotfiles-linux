@@ -63,6 +63,7 @@ for_window [instance="freetube"] inhibit_idle fullscreen
 for_window [shell=".*"] inhibit_idle fullscreen
 
 for_window [app_id="Helferlein"] floating enable, move right 600
+for_window [instance="qemu-system-x86_64"] floating enable, move right 600
 
 input "5426:152:Razer_Razer_DeathAdder_Essential" {
     accel_profile "flat"
