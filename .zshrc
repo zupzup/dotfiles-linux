@@ -51,6 +51,9 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH=/home/mario/.surrealdb:$PATH
 export LC_CTYPE="en_US.UTF-8"
 
+export PATH="$PATH:/home/mario/tools/flutter/bin"
+export PATH="$PATH:/home/mario/Android/Sdk/cmdline-tools/bin"
+
 export PATH="$HOME/.cargo/bin:$PATH"
 export GOPATH=/home/mario/go
 
