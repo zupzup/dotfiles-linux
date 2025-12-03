@@ -64,6 +64,12 @@ require('lazy').setup({
     {'jelera/vim-javascript-syntax'},
     {'pangloss/vim-javascript'},
     {'mxw/vim-jsx'},
+    {
+        'dart-lang/dart-vim-plugin',
+        config = function()
+            vim.g.dart_format_on_save = 1
+        end
+    },
     {'leafgarland/typescript-vim'},
     {'fatih/vim-go'},
     {
@@ -176,9 +182,19 @@ require('lazy').setup({
     {
         'neovim/nvim-lspconfig',
         config = function()
-            vim.lsp.config('ts_ls',  {})
+            -- TS
+            vim.lsp.config('ts_ls', {
+                cmd = { 'typescript-language-server', '--stdio' },
+                filetypes = {
+                    'javascript',
+                    'javascriptreact',
+                    'typescript',
+                    'typescriptreact',
+                },
+            })
             vim.lsp.enable('ts_ls')
 
+            -- Go
             vim.lsp.config('gopls',  {
                 cmd = { "gopls" },
                 filetypes = { "go", "gomod", "gowork", "gotmpl" },
@@ -197,6 +213,29 @@ require('lazy').setup({
                 },
             })
             vim.lsp.enable('gopls')
+
+            -- Dart
+            vim.lsp.config('dartls', {
+                cmd = { 'dart', 'language-server', '--protocol=lsp' },
+                filetypes = { 'dart' },
+                init_options = {
+                    onlyAnalyzeProjectsWithOpenFiles = true,
+                    suggestFromUnimportedLibraries = true,
+                    closingLabels = true,
+                    outline = true,
+                    flutterOutline = true,
+                },
+                settings = {
+                    dart = {
+                        completeFunctionCalls = true,
+                        showTodos = true,
+                    },
+                },
+            })
+
+            vim.lsp.enable('dartls')
+
+            -- Rust
 
             vim.lsp.config('rust_analyzer', {
                 settings = {
@@ -227,6 +266,7 @@ require('lazy').setup({
             })
             vim.lsp.enable('rust_analyzer')
 
+            -- Bash
             if vim.fn.executable('bash-language-server') == 1 then
                 vim.lsp.enable('bashls')
             end
