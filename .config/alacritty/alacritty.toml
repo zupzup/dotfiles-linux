@@ -24,20 +24,12 @@ color = '#00a066'
 index = 17
 color = '#005d62'
 
-[env]
-TERM = "xterm-256color"
-
 [font]
 size = 10.0
 
 [font.normal]
 family = "monospace"
 style = "Regular"
-
-[[keyboard.bindings]]
-action = "Paste"
-key = "V"
-mods = "Control|Shift"
 
 [[keyboard.bindings]]
 action = "Paste"
@@ -77,11 +69,6 @@ mods = "Control"
 [[keyboard.bindings]]
 action = "DecreaseFontSize"
 key = "Minus"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "ClearHistory"
-key = "K"
 mods = "Control"
 
 [[keyboard.bindings]]
