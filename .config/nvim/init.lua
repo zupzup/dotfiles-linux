@@ -73,15 +73,6 @@ require('lazy').setup({
     {'leafgarland/typescript-vim'},
     {'fatih/vim-go'},
     {
-        'rust-lang/rust.vim',
-        ft = { "rust" },
-        config = function()
-            vim.g.rustfmt_autosave = 1
-            vim.g.rustfmt_emit_files = 1
-            vim.g.rustfmt_fail_silently = 0
-        end
-    },
-    {
         "ray-x/lsp_signature.nvim",
         event = "VeryLazy",
         opts = {},
@@ -303,6 +294,16 @@ require('lazy').setup({
 
                     local client = vim.lsp.get_client_by_id(ev.data.client_id)
                     client.server_capabilities.semanticTokensProvider = nil
+                    -- format on save for Rust
+                    if client.server_capabilities.documentFormattingProvider then
+                        vim.api.nvim_create_autocmd("BufWritePre", {
+                            group = vim.api.nvim_create_augroup("RustFormat", { clear = true }),
+                            buffer = bufnr,
+                            callback = function()
+                                vim.lsp.buf.format({ bufnr = bufnr })
+                            end,
+                        })
+                    end
                 end,
             })
         end
@@ -387,6 +388,7 @@ vim.keymap.set('n', '<c-k>', '<c-w>k')
 vim.keymap.set('n', '<c-h>', '<c-w>h')
 vim.keymap.set('n', '<c-l>', '<c-w>l')
 
+vim.api.nvim_set_keymap('n', '<leader>vg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>vf', ':Telescope live_grep<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>vr', ':Telescope resume<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<leader>vb', '"zy:Telescope grep_string default_text=<C-r>z<CR>', { noremap = true, silent = true })
