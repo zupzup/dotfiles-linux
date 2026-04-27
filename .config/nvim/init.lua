@@ -136,7 +136,7 @@ require('lazy').setup({
         end
     },
     {'milkypostman/vim-togglelist'},
-    {'humbertocarmona/kanagawa-mod.nvim',
+    {'zupzup/kanagawa-mod',
         config = function()
             vim.cmd("colorscheme kanagawa") -- Use "kanagawa-wave" or "kanagawa-lotus" if preferred
 
