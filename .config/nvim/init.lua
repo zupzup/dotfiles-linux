@@ -67,7 +67,7 @@ require('lazy').setup({
     {
         'dart-lang/dart-vim-plugin',
         config = function()
-            vim.g.dart_format_on_save = 1
+            vim.g.dart_format_on_save = 0
         end
     },
     {'leafgarland/typescript-vim'},
