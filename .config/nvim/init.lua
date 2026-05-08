@@ -55,45 +55,33 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-    {'kien/ctrlp.vim'},
     {'preservim/nerdtree'},
     {
         'nvim-telescope/telescope.nvim',
-        dependencies = { 'nvim-lua/plenary.nvim' }
-    },
-    {'jelera/vim-javascript-syntax'},
-    {'pangloss/vim-javascript'},
-    {'mxw/vim-jsx'},
-    {
-        'dart-lang/dart-vim-plugin',
+        dependencies = { 'nvim-lua/plenary.nvim' },
         config = function()
-            vim.g.dart_format_on_save = 0
-        end
-    },
-    {'leafgarland/typescript-vim'},
-    {'fatih/vim-go'},
-    {
-        "ray-x/lsp_signature.nvim",
-        event = "VeryLazy",
-        opts = {},
-        config = function(_, opts)
-            require "lsp_signature".setup({
-                doc_lines = 0,
-                handler_opts = {
-                    border = "none"
+            require('telescope').setup({
+                defaults = {
+                    file_ignore_patterns = {
+                        "^.git/",
+                        "^.hg/",
+                        "^.svn/",
+                        "^target/",
+                        "^node_modules/",
+                        "^dist/",
+                        "^build/",
+                        "^vendor/",
+                    },
+                },
+
+                pickers = {
+                    find_files = {
+                        hidden = true,
+                    },
                 },
             })
         end
     },
-    {'cespare/vim-toml'},
-    {
-        "cuducos/yaml.nvim",
-        ft = { "yaml" },
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter",
-        },
-    },
-    {'lervag/vimtex'},
     {'markonm/traces.vim'},
     {'Raimondi/delimitMate'},
 
@@ -147,85 +135,11 @@ require('lazy').setup({
             end, 50)
         end,
     },
-    {
-        'junegunn/fzf.vim',
-        dependencies = {
-            { 'junegunn/fzf', dir = '~/.fzf', build = './install --all' },
-        },
-        config = function()
-            vim.g.fzf_layout = { down = '~20%' }
-            function list_cmd()
-                local base = vim.fn.fnamemodify(vim.fn.expand('%'), ':h:.:S')
-                if base == '.' then
-                    return 'fdfind --hidden --type file --follow'
-                else
-                    return vim.fn.printf('fdfind --hidden --type file --follow | proximity-sort %s', vim.fn.shellescape(vim.fn.expand('%')))
-                end
-            end
-            vim.api.nvim_create_user_command('Files', function(arg)
-                vim.fn['fzf#vim#files'](arg.qargs, { source = list_cmd(), options = '--scheme=path --tiebreak=index' }, arg.bang)
-            end, { bang = true, nargs = '?', complete = "dir" })
-        end
-    },
     {'tpope/vim-commentary'},
-
     -- LSP
     {
         'neovim/nvim-lspconfig',
         config = function()
-            -- TS
-            vim.lsp.config('ts_ls', {
-                cmd = { 'typescript-language-server', '--stdio' },
-                filetypes = {
-                    'javascript',
-                    'javascriptreact',
-                    'typescript',
-                    'typescriptreact',
-                },
-            })
-            vim.lsp.enable('ts_ls')
-
-            -- Go
-            vim.lsp.config('gopls',  {
-                cmd = { "gopls" },
-                filetypes = { "go", "gomod", "gowork", "gotmpl" },
-                root_markers = { 'go.work', 'go.mod', '.git' },
-                settings = {
-                    gopls = {
-                        completeUnimported = true,
-                        usePlaceholders = true,
-                        analyses = {
-                            unusedparams = true,
-                            shadow = true,
-                        },
-                        staticcheck = true,
-                        gofumpt = true,
-                    },
-                },
-            })
-            vim.lsp.enable('gopls')
-
-            -- Dart
-            vim.lsp.config('dartls', {
-                cmd = { 'dart', 'language-server', '--protocol=lsp' },
-                filetypes = { 'dart' },
-                init_options = {
-                    onlyAnalyzeProjectsWithOpenFiles = true,
-                    suggestFromUnimportedLibraries = true,
-                    closingLabels = true,
-                    outline = true,
-                    flutterOutline = true,
-                },
-                settings = {
-                    dart = {
-                        completeFunctionCalls = true,
-                        showTodos = true,
-                    },
-                },
-            })
-
-            vim.lsp.enable('dartls')
-
             -- Rust
 
             vim.lsp.config('rust_analyzer', {
@@ -256,11 +170,6 @@ require('lazy').setup({
                 },
             })
             vim.lsp.enable('rust_analyzer')
-
-            -- Bash
-            if vim.fn.executable('bash-language-server') == 1 then
-                vim.lsp.enable('bashls')
-            end
 
             -- Global mappings.
             -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -376,8 +285,8 @@ vim.keymap.set('n', '<leader><leader>', '<c-^>')
 vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>n', ':bn<cr>')
 vim.keymap.set('n', '<leader>N', ':bp<cr>')
-vim.keymap.set('n', '<leader>f', '<cmd>Files<cr>')
-vim.keymap.set('n', '<c-p>', '<cmd>Files<cr>')
+vim.keymap.set('n', '<leader>f', '<cmd>Telescope find_files hidden=true<cr>')
+vim.keymap.set('n', '<c-p>', '<cmd>Telescope find_files hidden=true<cr>')
 vim.keymap.set('i', '<c-c>', '<esc>')
 vim.keymap.set('n', '<leader>s', ':vsplit<cr>')
 vim.keymap.set('n', '<leader>c', ':nohls<cr>')
@@ -431,11 +340,9 @@ vim.opt.splitbelow = true
 vim.opt.undofile = true
 vim.opt.wildmode = 'list:longest'
 vim.opt.wildignore = '.hg,.svn,*~,*.png,*.jpg,*.gif,*.min.js,*.swp,*.o,vendor,dist,_site,target,*/target/*,*target,build'
-vim.opt.guicursor = "n-v-c:block"
-vim.opt.guicursor = "i:block-blinkon1"
+vim.opt.guicursor = ""
 
 vim.cmd('colorscheme kanagawa')
--- vim.cmd('colorscheme nazca')
 
 -- NerdTree Keymaps
 vim.api.nvim_set_keymap('n', '<leader>t', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
@@ -444,5 +351,3 @@ vim.api.nvim_set_keymap('n', '<leader>T', ':NERDTreeFind<CR>', { noremap = true,
 -- Clipboard
 vim.o.clipboard = 'unnamedplus'
 
--- Status Line
-vim.o.statusline = '%<%f (%{&ft}) %-4(%m%)%=%-19(%3l,%02c%03V%)'
