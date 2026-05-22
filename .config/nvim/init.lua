@@ -164,7 +164,7 @@ require('lazy').setup({
                             },
                         },
                         diagnostics = {
-                            disabled = { "unresolved-proc-macro" }, -- Avoid slow diagnostics on macros
+                            disabled = { "unresolved-proc-macro", "experimental" }, -- Avoid slow diagnostics on macros
                         },
                     },
                 },
