@@ -64,6 +64,8 @@ export ANDROID_HOME=/home/mario/Android/Sdk
 export ANDROID_SDK_ROOT=/home/mario/Android/Sdk
 export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH"
 
+export SCCACHE_CACHE_SIZE=50G
+
 # ~/tools/cameractrls/cameractrls.py -d /dev/video5 -l -c power_line_frequency=50_hz > /dev/null 2> /dev/null
 ~/tools/cameractrls/cameractrls.py -d /dev/v4l/by-id/usb-046d_Logi_Webcam_C920e_489AFEAF-video-index0 -l -c power_line_frequency=50_hz > /dev/null 2> /dev/null
 
@@ -72,3 +74,7 @@ export FZF_DEFAULT_COMMAND='rg -g ""'
 eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
