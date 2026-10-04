@@ -47,10 +47,10 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 1200 'swaylock -f -c 000000' \
-         timeout 3600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         timeout 4200 '$sleep_cmd' \
-         before-sleep 'swaylock -f -c 000000'
+    timeout 1200 'swaylock -f -c 000000' \
+    timeout 3600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+    timeout 4200 '$sleep_cmd' \
+    before-sleep 'swaylock -f -c 000000'
 
 for_window [app_id="firefox"] shortcuts_inhibitor disable
 for_window [class="Google-chrome"] shortcuts_inhibitor disable
@@ -93,7 +93,7 @@ input "type:keyboard" {
 }
 
 input "2362:597:UNIW0001:00_093A:0255_Touchpad" {
-    middle_emulation enabled no
+    middle_emulation disabled
 }
 
 ### Key bindings
