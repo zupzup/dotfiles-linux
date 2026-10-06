@@ -297,6 +297,8 @@ vim.keymap.set('n', '<c-k>', '<c-w>k')
 vim.keymap.set('n', '<c-h>', '<c-w>h')
 vim.keymap.set('n', '<c-l>', '<c-w>l')
 
+vim.keymap.set('n', '<c-s>', '<cmd>syntax sync fromstart<CR>')
+
 vim.api.nvim_set_keymap('n', '<leader>vg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>vf', ':Telescope live_grep<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>vr', ':Telescope resume<CR>', { noremap = true, silent = true })
